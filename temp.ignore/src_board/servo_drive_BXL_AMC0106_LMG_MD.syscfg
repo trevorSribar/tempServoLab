@@ -1,0 +1,491 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "F28P65x" --part "F28P65x_169NMR" --package "169NMR" --context "CPU1" --product "C2000WARE@5.04.00.00"
+ * @v2CliArgs --device "TMS320F28P650SK" --package "169NMR" --variant "TMS320F28P650SK6" --context "CPU1" --product "C2000WARE@5.04.00.00"
+ * @versions {"tool":"1.23.0+4000"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const adc              = scripting.addModule("/driverlib/adc.js", {}, false);
+const adc1             = adc.addInstance();
+const adc2             = adc.addInstance();
+const adc3             = adc.addInstance();
+const analog           = scripting.addModule("/driverlib/analog.js", {}, false);
+const analog1          = analog.addInstance();
+const cputimer         = scripting.addModule("/driverlib/cputimer.js", {}, false);
+const cputimer1        = cputimer.addInstance();
+const cputimer2        = cputimer.addInstance();
+const dac              = scripting.addModule("/driverlib/dac.js", {}, false);
+const dac1             = dac.addInstance();
+const device_support   = scripting.addModule("/driverlib/device_support.js");
+const epwm             = scripting.addModule("/driverlib/epwm.js", {}, false);
+const epwm1            = epwm.addInstance();
+const epwm2            = epwm.addInstance();
+const epwm3            = epwm.addInstance();
+const epwm4            = epwm.addInstance();
+const epwmxbar         = scripting.addModule("/driverlib/epwmxbar.js", {}, false);
+const epwmxbar1        = epwmxbar.addInstance();
+const eqep             = scripting.addModule("/driverlib/eqep.js", {}, false);
+const eqep1            = eqep.addInstance();
+const gpio             = scripting.addModule("/driverlib/gpio.js", {}, false);
+const gpio1            = gpio.addInstance();
+const gpio2            = gpio.addInstance();
+const gpio3            = gpio.addInstance();
+const inputxbar_input  = scripting.addModule("/driverlib/inputxbar_input.js", {}, false);
+const inputxbar_input1 = inputxbar_input.addInstance();
+const other            = scripting.addModule("/driverlib/other.js", {}, false);
+const other1           = other.addInstance();
+const sd               = scripting.addModule("/driverlib/sd.js", {}, false);
+const sd1              = sd.addInstance();
+const sd2              = sd.addInstance();
+const sd3              = sd.addInstance();
+const spi              = scripting.addModule("/driverlib/spi.js", {}, false);
+const spi1             = spi.addInstance();
+const sync             = scripting.addModule("/driverlib/sync.js");
+const sysctl           = scripting.addModule("/driverlib/sysctl.js");
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+adc1.$name                   = "ADCA_CONFIG";
+adc1.adcClockPrescaler       = "ADC_CLK_DIV_4_0";
+adc1.socHighPriorityMode     = "ADC_PRI_ALL_HIPRI";
+adc1.soc0IndependentNameMode = true;
+adc1.soc0Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc1.soc0SampleWindow        = 15;
+adc1.soc1copyFrom            = "MTR1_IU_ADC";
+adc1.soc1IndependentNameMode = true;
+adc1.soc0Channel             = "ADC_CH_ADCIN7";
+adc1.soc1Channel             = "ADC_CH_ADCIN4";
+adc1.soc1Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc1.soc1SampleWindow        = 20;
+adc1.soc2IndependentNameMode = true;
+adc1.soc2Channel             = "ADC_CH_ADCIN14";
+adc1.soc2Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc1.soc2SampleWindow        = 20;
+adc1.soc2Name                = "MTR1_VDC";
+adc1.soc1Name                = "MTR1_VU";
+adc1.soc0Name                = "MTR1_IU";
+adc1.interruptPulseMode      = "ADC_PULSE_END_OF_CONV";
+adc1.interrupt1SOCSource     = "ADC_INT_TRIGGER_EOC2";
+adc1.ppb1IndependentNameMode = true;
+adc1.registerInterrupts      = ["1"];
+adc1.ppb1Name                = "MTR1_IU_PPB";
+adc1.enabledSOCs             = ["ADC_SOC_NUMBER1","ADC_SOC_NUMBER2"];
+adc1.useInterrupts           = false;
+
+adc2.adcClockPrescaler       = "ADC_CLK_DIV_4_0";
+adc2.socHighPriorityMode     = "ADC_PRI_ALL_HIPRI";
+adc2.soc0IndependentNameMode = true;
+adc2.soc0Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc2.soc0SampleWindow        = 15;
+adc2.soc1copyFrom            = "MTR1_IU_ADC";
+adc2.soc1IndependentNameMode = true;
+adc2.soc0Channel             = "ADC_CH_ADCIN7";
+adc2.soc1Channel             = "ADC_CH_ADCIN4";
+adc2.soc1Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc2.soc1SampleWindow        = 20;
+adc2.soc2IndependentNameMode = true;
+adc2.soc2Channel             = "ADC_CH_ADCIN14";
+adc2.soc2Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc2.soc2SampleWindow        = 20;
+adc2.soc2Name                = "MTR1_VDC";
+adc2.interruptPulseMode      = "ADC_PULSE_END_OF_CONV";
+adc2.enableInterrupt1        = true;
+adc2.interrupt1SOCSource     = "ADC_INT_TRIGGER_EOC2";
+adc2.ppb1IndependentNameMode = true;
+adc2.registerInterrupts      = ["1"];
+adc2.$name                   = "ADCB_CONFIG";
+adc2.adcBase                 = "ADCB_BASE";
+adc2.soc0Name                = "MTR1_IV";
+adc2.soc1Name                = "MTR1_VV";
+adc2.ppb1Name                = "MTR1_IV_PPB";
+adc2.useInterrupts           = false;
+adc2.enabledSOCs             = ["ADC_SOC_NUMBER1"];
+
+adc3.socHighPriorityMode     = "ADC_PRI_ALL_HIPRI";
+adc3.soc0IndependentNameMode = true;
+adc3.soc0Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc3.soc0SampleWindow        = 15;
+adc3.soc1copyFrom            = "MTR1_IU_ADC";
+adc3.soc1IndependentNameMode = true;
+adc3.soc0Channel             = "ADC_CH_ADCIN7";
+adc3.soc1Channel             = "ADC_CH_ADCIN4";
+adc3.soc1Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc3.soc1SampleWindow        = 20;
+adc3.soc2IndependentNameMode = true;
+adc3.soc2Channel             = "ADC_CH_ADCIN14";
+adc3.soc2Trigger             = "ADC_TRIGGER_EPWM5_SOCA";
+adc3.soc2SampleWindow        = 20;
+adc3.soc2Name                = "MTR1_VDC";
+adc3.interruptPulseMode      = "ADC_PULSE_END_OF_CONV";
+adc3.enableInterrupt1        = true;
+adc3.interrupt1SOCSource     = "ADC_INT_TRIGGER_EOC2";
+adc3.ppb1IndependentNameMode = true;
+adc3.registerInterrupts      = ["1"];
+adc3.adcBase                 = "ADCC_BASE";
+adc3.$name                   = "ADCC_CONFIG";
+adc3.soc0Name                = "MTR1_IW";
+adc3.soc1Name                = "MTR1_VW";
+adc3.ppb1Name                = "MTR1_IW_PPB";
+adc3.useInterrupts           = false;
+adc3.adcClockPrescaler       = "ADC_CLK_DIV_4_0";
+adc3.enabledSOCs             = ["ADC_SOC_NUMBER1"];
+
+const divider6       = system.clockTree["ECATDIV"];
+divider6.divideValue = 2;
+
+const divider8       = system.clockTree["EPWMCLKDIV"];
+divider8.divideValue = 1;
+
+const mux5       = system.clockTree["DIVSRCSEL"];
+mux5.inputSelect = "PLLSYSCLK";
+
+const pinFunction1     = system.clockTree["AUXCLK"];
+pinFunction1.XTAL_Freq = 25;
+
+cputimer1.$name         = "CPUTIMER_TimeBase";
+cputimer1.emulationMode = "CPUTIMER_EMULATIONMODE_RUNFREE";
+cputimer1.startTimer    = true;
+cputimer1.timerPeriod   = 200000;
+
+cputimer2.cputimerBase  = "CPUTIMER2_BASE";
+cputimer2.$name         = "CPUTIMER_CpuUsage";
+cputimer2.emulationMode = "CPUTIMER_EMULATIONMODE_RUNFREE";
+cputimer2.startTimer    = true;
+cputimer2.timerPeriod   = 4294967295;
+
+dac1.referenceVoltage = "DAC_REF_ADC_VREFHI";
+dac1.dacBase          = "DACC_BASE";
+dac1.$name            = "MTR1_DAC";
+dac1.enableOutput     = true;
+
+analog1.$name            = "myANALOGPinMux0";
+adc1.analog              = analog1;
+analog1.useCase          = "CUSTOM";
+adc2.analog              = analog1;
+adc3.analog              = analog1;
+dac1.analog              = analog1;
+analog1.useInterfacePins = ["A14/B14/C14","A15/B15/C15","A4","B1/DACC_OUT","B4, GPIO215","C4, GPIO205"];
+
+device_support.useStandardCodeStartBranch = false;
+device_support.build                      = "Release";
+
+epwm1.epwmTimebase_hsClockDiv                                         = "EPWM_HSCLOCK_DIVIDER_1";
+epwm1.epwmTimebase_counterMode                                        = "EPWM_COUNTER_MODE_UP_DOWN";
+epwm1.epwmTimebase_syncOutPulseMode                                   = ["EPWM_SYNC_OUT_PULSE_ON_CNTR_ZERO"];
+epwm1.useInterfacePins                                                = ["EPWM#_A"];
+epwm1.epwmTimebase_period                                             = 5000;
+epwm1.epwmDeadband_polarityFED                                        = "EPWM_DB_POLARITY_ACTIVE_LOW";
+epwm1.epwmDeadband_enableRED                                          = true;
+epwm1.epwmDeadband_enableFED                                          = true;
+epwm1.epwmTimebase_syncInPulseSource                                  = "EPWM_SYNC_IN_PULSE_SRC_SYNCOUT_EPWM5";
+epwm1.epwmActionQualifier_EPWM_AQ_OUTPUT_A_shadowMode                 = true;
+epwm1.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_ZERO           = "EPWM_AQ_OUTPUT_LOW";
+epwm1.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_PERIOD         = "EPWM_AQ_OUTPUT_HIGH";
+epwm1.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_UP_CMPA        = "EPWM_AQ_OUTPUT_HIGH";
+epwm1.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_DOWN_CMPA      = "EPWM_AQ_OUTPUT_LOW";
+epwm1.epwmActionQualifier_EPWM_AQ_OUTPUT_B_shadowMode                 = true;
+epwm1.epwmDeadband_delayRED                                           = 10;
+epwm1.epwmDeadband_delayFED                                           = 10;
+epwm1.epwmTripZone_EPWM_TZ_ACTION_EVENT_TZA                           = "EPWM_TZ_ACTION_LOW";
+epwm1.epwmTripZone_EPWM_TZ_ACTION_EVENT_TZB                           = "EPWM_TZ_ACTION_LOW";
+epwm1.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_A1                         = "EPWM_TZ_EVENT_DCXH_HIGH";
+epwm1.epwmDigitalCompare_EPWM_DC_MODULE_A_EPWM_DC_EVENT_1_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm1.epwmDigitalCompare_EPWM_DC_MODULE_A_EPWM_DC_EVENT_2_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm1.epwmCounterCompare_cmpA                                         = 2500;
+epwm1.copyFrom                                                        = "myEPWM_PhA";
+epwm1.epwmEventTrigger_EPWM_SOC_A_triggerEnable                       = true;
+epwm1.epwmEventTrigger_EPWM_SOC_A_triggerEventPrescalar               = "1";
+epwm1.epwmCounterCompare_cmpB                                         = 2500;
+epwm1.epwmCounterCompare_cmpD                                         = 5;
+epwm1.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCAEVT1                       = "EPWM_TZ_ACTION_LOW";
+epwm1.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCAEVT2                       = "EPWM_TZ_ACTION_LOW";
+epwm1.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCBEVT1                       = "EPWM_TZ_ACTION_LOW";
+epwm1.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCBEVT2                       = "EPWM_TZ_ACTION_LOW";
+epwm1.epwmTripZone_oneShotSource                                      = ["EPWM_TZ_SIGNAL_DCAEVT1","EPWM_TZ_SIGNAL_DCBEVT1","EPWM_TZ_SIGNAL_OSHT1"];
+epwm1.epwmDigitalCompare_EPWM_DC_TYPE_DCAH                            = "EPWM_DC_TRIP_COMBINATION";
+epwm1.epwmDigitalCompare_EPWM_DC_TYPE_DCAH_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm1.epwmDigitalCompare_EPWM_DC_TYPE_DCAL                            = "EPWM_DC_TRIP_COMBINATION";
+epwm1.epwmDigitalCompare_EPWM_DC_TYPE_DCAL_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm1.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_A2                         = "EPWM_TZ_EVENT_DCXL_HIGH";
+epwm1.epwmDigitalCompare_EPWM_DC_TYPE_DCBH                            = "EPWM_DC_TRIP_COMBINATION";
+epwm1.epwmDigitalCompare_EPWM_DC_TYPE_DCBH_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm1.epwmDigitalCompare_EPWM_DC_TYPE_DCBL                            = "EPWM_DC_TRIP_COMBINATION";
+epwm1.epwmDigitalCompare_EPWM_DC_TYPE_DCBL_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm1.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_B1                         = "EPWM_TZ_EVENT_DCXH_HIGH";
+epwm1.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_B2                         = "EPWM_TZ_EVENT_DCXL_HIGH";
+epwm1.epwmDigitalCompare_EPWM_DC_MODULE_B_EPWM_DC_EVENT_1_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm1.epwmDigitalCompare_EPWM_DC_MODULE_B_EPWM_DC_EVENT_2_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm1.$name                                                           = "MTR1_PWM_U";
+epwm1.epwmCounterCompare_cmpC                                         = 960;
+epwm1.epwmEventTrigger_EPWM_SOC_A_triggerSource                       = "EPWM_SOC_TBCTR_D_CMPC";
+epwm1.epwm.$assign                                                    = "EPWM5";
+epwm1.epwm.epwm_aPin.$assign                                          = "GPIO8";
+epwm1.epwm.epwm_bPin.$assign                                          = "GPIO9";
+
+epwm2.copyFrom                                                        = "myEPWM_PhA";
+epwm2.epwmTimebase_hsClockDiv                                         = "EPWM_HSCLOCK_DIVIDER_1";
+epwm2.epwmTimebase_period                                             = 5000;
+epwm2.epwmTimebase_counterMode                                        = "EPWM_COUNTER_MODE_UP_DOWN";
+epwm2.epwmTimebase_syncInPulseSource                                  = "EPWM_SYNC_IN_PULSE_SRC_SYNCOUT_EPWM5";
+epwm2.epwmTimebase_syncOutPulseMode                                   = ["EPWM_SYNC_OUT_PULSE_ON_CNTR_ZERO"];
+epwm2.epwmCounterCompare_cmpA                                         = 2500;
+epwm2.epwmCounterCompare_cmpB                                         = 2500;
+epwm2.epwmActionQualifier_EPWM_AQ_OUTPUT_A_shadowMode                 = true;
+epwm2.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_ZERO           = "EPWM_AQ_OUTPUT_LOW";
+epwm2.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_PERIOD         = "EPWM_AQ_OUTPUT_HIGH";
+epwm2.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_UP_CMPA        = "EPWM_AQ_OUTPUT_HIGH";
+epwm2.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_DOWN_CMPA      = "EPWM_AQ_OUTPUT_LOW";
+epwm2.epwmActionQualifier_EPWM_AQ_OUTPUT_B_shadowMode                 = true;
+epwm2.epwmDeadband_polarityFED                                        = "EPWM_DB_POLARITY_ACTIVE_LOW";
+epwm2.epwmDeadband_enableRED                                          = true;
+epwm2.epwmDeadband_delayRED                                           = 10;
+epwm2.epwmDeadband_enableFED                                          = true;
+epwm2.epwmDeadband_delayFED                                           = 10;
+epwm2.epwmTripZone_EPWM_TZ_ACTION_EVENT_TZA                           = "EPWM_TZ_ACTION_LOW";
+epwm2.epwmTripZone_EPWM_TZ_ACTION_EVENT_TZB                           = "EPWM_TZ_ACTION_LOW";
+epwm2.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_A1                         = "EPWM_TZ_EVENT_DCXH_HIGH";
+epwm2.epwmDigitalCompare_EPWM_DC_MODULE_A_EPWM_DC_EVENT_1_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm2.epwmDigitalCompare_EPWM_DC_MODULE_A_EPWM_DC_EVENT_2_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm2.useInterfacePins                                                = ["EPWM#_A"];
+epwm2.epwmCounterCompare_cmpC                                         = 5;
+epwm2.epwmCounterCompare_cmpD                                         = 5;
+epwm2.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCAEVT1                       = "EPWM_TZ_ACTION_LOW";
+epwm2.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCAEVT2                       = "EPWM_TZ_ACTION_LOW";
+epwm2.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCBEVT1                       = "EPWM_TZ_ACTION_LOW";
+epwm2.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCBEVT2                       = "EPWM_TZ_ACTION_LOW";
+epwm2.epwmTripZone_oneShotSource                                      = ["EPWM_TZ_SIGNAL_DCAEVT1","EPWM_TZ_SIGNAL_DCBEVT1","EPWM_TZ_SIGNAL_OSHT1"];
+epwm2.epwmDigitalCompare_EPWM_DC_TYPE_DCAH                            = "EPWM_DC_TRIP_COMBINATION";
+epwm2.epwmDigitalCompare_EPWM_DC_TYPE_DCAH_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm2.epwmDigitalCompare_EPWM_DC_TYPE_DCAL                            = "EPWM_DC_TRIP_COMBINATION";
+epwm2.epwmDigitalCompare_EPWM_DC_TYPE_DCAL_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm2.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_A2                         = "EPWM_TZ_EVENT_DCXL_HIGH";
+epwm2.epwmDigitalCompare_EPWM_DC_TYPE_DCBH                            = "EPWM_DC_TRIP_COMBINATION";
+epwm2.epwmDigitalCompare_EPWM_DC_TYPE_DCBH_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm2.epwmDigitalCompare_EPWM_DC_TYPE_DCBL                            = "EPWM_DC_TRIP_COMBINATION";
+epwm2.epwmDigitalCompare_EPWM_DC_TYPE_DCBL_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm2.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_B1                         = "EPWM_TZ_EVENT_DCXH_HIGH";
+epwm2.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_B2                         = "EPWM_TZ_EVENT_DCXL_HIGH";
+epwm2.epwmDigitalCompare_EPWM_DC_MODULE_B_EPWM_DC_EVENT_1_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm2.epwmDigitalCompare_EPWM_DC_MODULE_B_EPWM_DC_EVENT_2_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm2.$name                                                           = "MTR1_PWM_V";
+epwm2.epwm.$assign                                                    = "EPWM4";
+epwm2.epwm.epwm_aPin.$assign                                          = "GPIO6";
+epwm2.epwm.epwm_bPin.$assign                                          = "GPIO7";
+
+epwm3.copyFrom                                                        = "myEPWM_PhA";
+epwm3.epwmTimebase_hsClockDiv                                         = "EPWM_HSCLOCK_DIVIDER_1";
+epwm3.epwmTimebase_period                                             = 5000;
+epwm3.epwmTimebase_counterMode                                        = "EPWM_COUNTER_MODE_UP_DOWN";
+epwm3.epwmTimebase_syncInPulseSource                                  = "EPWM_SYNC_IN_PULSE_SRC_SYNCOUT_EPWM5";
+epwm3.epwmTimebase_syncOutPulseMode                                   = ["EPWM_SYNC_OUT_PULSE_ON_CNTR_ZERO"];
+epwm3.epwmCounterCompare_cmpA                                         = 2500;
+epwm3.epwmCounterCompare_cmpB                                         = 2500;
+epwm3.epwmActionQualifier_EPWM_AQ_OUTPUT_A_shadowMode                 = true;
+epwm3.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_ZERO           = "EPWM_AQ_OUTPUT_LOW";
+epwm3.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_PERIOD         = "EPWM_AQ_OUTPUT_HIGH";
+epwm3.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_UP_CMPA        = "EPWM_AQ_OUTPUT_HIGH";
+epwm3.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_DOWN_CMPA      = "EPWM_AQ_OUTPUT_LOW";
+epwm3.epwmActionQualifier_EPWM_AQ_OUTPUT_B_shadowMode                 = true;
+epwm3.epwmDeadband_polarityFED                                        = "EPWM_DB_POLARITY_ACTIVE_LOW";
+epwm3.epwmDeadband_enableRED                                          = true;
+epwm3.epwmDeadband_delayRED                                           = 10;
+epwm3.epwmDeadband_enableFED                                          = true;
+epwm3.epwmDeadband_delayFED                                           = 10;
+epwm3.epwmTripZone_EPWM_TZ_ACTION_EVENT_TZA                           = "EPWM_TZ_ACTION_LOW";
+epwm3.epwmTripZone_EPWM_TZ_ACTION_EVENT_TZB                           = "EPWM_TZ_ACTION_LOW";
+epwm3.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_A1                         = "EPWM_TZ_EVENT_DCXH_HIGH";
+epwm3.epwmDigitalCompare_EPWM_DC_MODULE_A_EPWM_DC_EVENT_1_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm3.epwmDigitalCompare_EPWM_DC_MODULE_A_EPWM_DC_EVENT_2_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm3.useInterfacePins                                                = ["EPWM#_A"];
+epwm3.epwmCounterCompare_cmpC                                         = 5;
+epwm3.epwmCounterCompare_cmpD                                         = 5;
+epwm3.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCAEVT1                       = "EPWM_TZ_ACTION_LOW";
+epwm3.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCAEVT2                       = "EPWM_TZ_ACTION_LOW";
+epwm3.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCBEVT1                       = "EPWM_TZ_ACTION_LOW";
+epwm3.epwmTripZone_EPWM_TZ_ACTION_EVENT_DCBEVT2                       = "EPWM_TZ_ACTION_LOW";
+epwm3.epwmTripZone_oneShotSource                                      = ["EPWM_TZ_SIGNAL_DCAEVT1","EPWM_TZ_SIGNAL_DCBEVT1","EPWM_TZ_SIGNAL_OSHT1"];
+epwm3.epwmDigitalCompare_EPWM_DC_TYPE_DCAH                            = "EPWM_DC_TRIP_COMBINATION";
+epwm3.epwmDigitalCompare_EPWM_DC_TYPE_DCAH_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm3.epwmDigitalCompare_EPWM_DC_TYPE_DCAL                            = "EPWM_DC_TRIP_COMBINATION";
+epwm3.epwmDigitalCompare_EPWM_DC_TYPE_DCAL_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm3.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_A2                         = "EPWM_TZ_EVENT_DCXL_HIGH";
+epwm3.epwmDigitalCompare_EPWM_DC_TYPE_DCBH                            = "EPWM_DC_TRIP_COMBINATION";
+epwm3.epwmDigitalCompare_EPWM_DC_TYPE_DCBH_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm3.epwmDigitalCompare_EPWM_DC_TYPE_DCBL                            = "EPWM_DC_TRIP_COMBINATION";
+epwm3.epwmDigitalCompare_EPWM_DC_TYPE_DCBL_combinationInputConfig     = ["EPWM_DC_COMBINATIONAL_TRIPIN7"];
+epwm3.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_B1                         = "EPWM_TZ_EVENT_DCXH_HIGH";
+epwm3.epwmDigitalCompare_EPWM_TZ_DC_OUTPUT_B2                         = "EPWM_TZ_EVENT_DCXL_HIGH";
+epwm3.epwmDigitalCompare_EPWM_DC_MODULE_B_EPWM_DC_EVENT_1_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm3.epwmDigitalCompare_EPWM_DC_MODULE_B_EPWM_DC_EVENT_2_eventSource = "EPWM_DC_EVENT_SOURCE_FILT_SIGNAL";
+epwm3.$name                                                           = "MTR1_PWM_W";
+epwm3.epwm.$assign                                                    = "EPWM6";
+epwm3.epwm.epwm_aPin.$assign                                          = "GPIO10";
+epwm3.epwm.epwm_bPin.$assign                                          = "GPIO11";
+
+epwm4.$name                                                    = "MTR1_SDFM_CLK";
+epwm4.epwmTimebase_hsClockDiv                                  = "EPWM_HSCLOCK_DIVIDER_1";
+epwm4.epwmTimebase_counterMode                                 = "EPWM_COUNTER_MODE_UP";
+epwm4.epwmTimebase_syncInPulseSource                           = "EPWM_SYNC_IN_PULSE_SRC_DISABLE";
+epwm4.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_ZERO    = "EPWM_AQ_OUTPUT_LOW";
+epwm4.epwmActionQualifier_EPWM_AQ_OUTPUT_A_ON_TIMEBASE_UP_CMPA = "EPWM_AQ_OUTPUT_HIGH";
+epwm4.useCase                                                  = "CUSTOM";
+epwm4.useInterfacePins                                         = ["EPWM#_A"];
+epwm4.epwmTimebase_period                                      = 9;
+epwm4.epwmCounterCompare_cmpA                                  = 4;
+epwm4.epwm.$assign                                             = "EPWM10";
+epwm4.epwm.epwm_aPin.$assign                                   = "GPIO18";
+
+epwmxbar1.tripInput = "XBAR_TRIP7";
+epwmxbar1.$name     = "MTR1_IS_TRIP_SDFM";
+
+eqep1.useCase                    = "CUSTOM";
+eqep1.useInterfacePins           = ["EQEP#_A","EQEP#_B","EQEP#_INDEX"];
+eqep1.positionCounterMode        = "EQEP_POSITION_RESET_MAX_POS";
+eqep1.positionCounterMax         = 3999;
+eqep1.latchPositionCounter       = "EQEP_LATCH_UNIT_TIME_OUT";
+eqep1.positionIndexEvents        = "EQEP_INIT_RISING_INDEX";
+eqep1.swPositionInit             = true;
+eqep1.enableModule               = true;
+eqep1.captureConfig              = true;
+eqep1.capPrescale                = "EQEP_CAPTURE_CLK_DIV_128";
+eqep1.evntPrescale               = "EQEP_UNIT_POS_EVNT_DIV_32";
+eqep1.enableCapture              = true;
+eqep1.enableUnitTimer            = true;
+eqep1.unitTimerPeriod            = 20000;
+eqep1.enableInterrupt            = true;
+eqep1.interruptSources           = ["EQEP_INT_UNIT_TIME_OUT"];
+eqep1.emulationMode              = "EQEP_EMULATIONMODE_RUNFREE";
+eqep1.$name                      = "MTR1_QEP";
+eqep1.eqep.$assign               = "EQEP1";
+eqep1.eqep.eqep_aPin.$assign     = "GPIO20";
+eqep1.eqep.eqep_bPin.$assign     = "GPIO21";
+eqep1.eqep.eqep_indexPin.$assign = "GPIO23";
+eqep1.aQual.qualMode             = "GPIO_QUAL_3SAMPLE";
+eqep1.bQual.qualMode             = "GPIO_QUAL_3SAMPLE";
+eqep1.indexQual.qualMode         = "GPIO_QUAL_3SAMPLE";
+
+gpio1.$name           = "MTR1_PM_nFAULT";
+gpio1.padConfig       = "PULLUP";
+gpio1.qualMode        = "GPIO_QUAL_3SAMPLE";
+gpio1.gpioPin.$assign = "GPIO133";
+
+gpio2.$name             = "LAUNCHPAD_LED1";
+gpio2.writeInitialValue = true;
+gpio2.direction         = "GPIO_DIR_MODE_OUT";
+gpio2.gpioPin.$assign   = "GPIO13";
+
+gpio3.$name             = "ISR_MEASURE_IO";
+gpio3.direction         = "GPIO_DIR_MODE_OUT";
+gpio3.writeInitialValue = true;
+gpio3.gpioPin.$assign   = "GPIO25";
+
+inputxbar_input1.$name         = "MTR1_PM_nFAULT_IN";
+inputxbar_input1.inputxbarLock = true;
+inputxbar_input1.inputxbarGpio = "GPIO133";
+
+other1.useCase                   = "CUSTOM";
+other1.useInterfacePins          = ["ADCSOCAO"];
+other1.$name                     = "ADCSOCA0_pin";
+other1.other.adcsocaoPin.$assign = "GPIO12";
+
+sd1.Use_FilterChannel_4           = true;
+sd1.Ch4_DataFilterEnable          = true;
+sd1.Ch4_DOSR                      = 64;
+sd1.Ch4_SDSYNC_Enable             = true;
+sd1.Ch4_SDSYNC_source             = "SDFM_SYNC_PWM5_SOCA";
+sd1.useInterrupts                 = true;
+sd1.registerInterrupts            = ["INT_SDFM_DR4"];
+sd1.useCase                       = "CUSTOM";
+sd1.useInterfacePins              = ["SD#_C4","SD#_D4"];
+sd1.Ch4_Vclipping                 = 0.064;
+sd1.Ch4_FIFO_Enable               = true;
+sd1.SDFFINT                       = ["FILTER4"];
+sd1.Ch4_DataFilter_Representation = "SDFM_DATA_FORMAT_16_BIT";
+sd1.Ch4_FFSYNCCLREN               = true;
+sd1.Ch4_SDFFIL                    = "3";
+sd1.$name                         = "MTR1_SDFM_IW";
+sd1.sdfmIntDr4.enableInterrupt    = true;
+sd1.sdfmIntDr4.interruptHandler   = "motor1CtrlISR";
+sd1.sd.$assign                    = "SD4";
+sd1.sd.sd_c4Pin.$assign           = "GPIO42";
+sd1.sd.sd_d4Pin.$assign           = "GPIO43";
+sd1.c4Qual.qualMode               = "GPIO_QUAL_ASYNC";
+sd1.d4Qual.qualMode               = "GPIO_QUAL_ASYNC";
+
+sd2.$name                         = "MTR1_SDFM_IV";
+sd2.Use_FilterChannel_1           = true;
+sd2.Ch1_DataFilterEnable          = true;
+sd2.Ch1_DOSR                      = 64;
+sd2.Ch1_DataFilter_Representation = "SDFM_DATA_FORMAT_16_BIT";
+sd2.Ch1_SDSYNC_Enable             = true;
+sd2.Ch1_SDSYNC_source             = "SDFM_SYNC_PWM5_SOCA";
+sd2.useCase                       = "CUSTOM";
+sd2.useInterfacePins              = ["SD#_C1","SD#_D1"];
+sd2.Ch1_Vclipping                 = 0.064;
+sd2.Ch1_FIFO_Enable               = true;
+sd2.Ch1_SDFFIL                    = "3";
+sd2.Ch1_FFSYNCCLREN               = true;
+sd2.sd.$assign                    = "SD3";
+sd2.sd.sd_c1Pin.$assign           = "GPIO105";
+sd2.sd.sd_d1Pin.$assign           = "GPIO104";
+sd2.c1Qual.qualMode               = "GPIO_QUAL_ASYNC";
+sd2.d1Qual.qualMode               = "GPIO_QUAL_ASYNC";
+
+sd3.Use_FilterChannel_1           = true;
+sd3.Ch1_DataFilterEnable          = true;
+sd3.Ch1_DOSR                      = 64;
+sd3.Ch1_DataFilter_Representation = "SDFM_DATA_FORMAT_16_BIT";
+sd3.Ch1_SDSYNC_Enable             = true;
+sd3.Ch1_SDSYNC_source             = "SDFM_SYNC_PWM5_SOCA";
+sd3.useCase                       = "CUSTOM";
+sd3.useInterfacePins              = ["SD#_C1","SD#_D1"];
+sd3.Ch1_Vclipping                 = 0.064;
+sd3.Ch1_FIFO_Enable               = true;
+sd3.Ch1_SDFFIL                    = "3";
+sd3.Ch1_FFSYNCCLREN               = true;
+sd3.$name                         = "MTR1_SDFM_IU";
+sd3.sd.$assign                    = "SD1";
+sd3.sd.sd_c1Pin.$assign           = "GPIO17";
+sd3.sd.sd_d1Pin.$assign           = "GPIO16";
+sd3.c1Qual.qualMode               = "GPIO_QUAL_ASYNC";
+sd3.d1Qual.qualMode               = "GPIO_QUAL_ASYNC";
+
+spi1.mode                    = "SPI_MODE_CONTROLLER";
+spi1.bitRate                 = 4000000;
+spi1.txFifo                  = "SPI_FIFO_TX4";
+spi1.rxFifo                  = "SPI_FIFO_RX4";
+spi1.useCase                 = "CUSTOM";
+spi1.useInterfacePins        = ["SPI@_CLK","SPI@_PICO","SPI@_PTE"];
+spi1.emulationMode           = "SPI_EMULATION_FREE_RUN";
+spi1.$name                   = "DAC_SPI";
+spi1.spi.spi_picoPin.$assign = "GPIO91";
+spi1.spi.spi_clkPin.$assign  = "GPIO93";
+spi1.spi.spi_ptePin.$assign  = "GPIO94";
+spi1.clkQual.$name           = "myGPIOQUAL1";
+spi1.picoQual.$name          = "myGPIOQUAL0";
+spi1.pteQual.$name           = "myGPIOQUAL2";
+
+sync.ADCSOCAOutputSelect = ["SYSCTL_ADCSOC_SRC_PWM5SOCA"];
+
+sysctl.selType_SYSCTL_SDFMTYPE     = true;
+sysctl.selTypeLock_SYSCTL_SDFMTYPE = true;
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+analog1.analog.$suggestSolution                   = "ANALOG";
+analog1.analog["a14/b14/c14Pin"].$suggestSolution = "A14/B14/C14";
+analog1.analog["a15/b15/c15Pin"].$suggestSolution = "A15/B15/C15";
+analog1.analog.a4Pin.$suggestSolution             = "A4";
+analog1.analog["b1/dacc_outPin"].$suggestSolution = "B1/DACC_OUT";
+analog1.analog["b4, gpio215Pin"].$suggestSolution = "B4, GPIO215";
+analog1.analog["c4, gpio205Pin"].$suggestSolution = "C4, GPIO205";
+other1.other.$suggestSolution                     = "OTHER";
+spi1.spi.$suggestSolution                         = "SPID";

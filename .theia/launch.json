@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "universal_servo_drive_f28p65x",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "universal_servo_drive_f28p65x",
+                "resourceId": "/universal_servo_drive_f28p65x"
+            },
+            "launchSettings": {
+                "coresToLoadForProjectLaunch": [
+                    "C28xx_CPU1"
+                ]
+            }
+        }
+    ]
+}
