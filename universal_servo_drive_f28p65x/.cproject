@@ -150,6 +150,32 @@
                             </tool>
                         </toolChain>
                     </folderInfo>
+                    <fileInfo id="com.ti.ccstudio.buildDefinitions.C2000.Default.1627299052.sys_main.c" name="sys_main.c" rcbsApplicability="disable" resourcePath="sys_main.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_22.6.exe.compilerDebug.1496694198.87775627">
+                        <tool id="com.ti.ccstudio.buildDefinitions.C2000_22.6.exe.compilerDebug.1496694198.87775627" name="C2000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.exe.compilerDebug.1496694198">
+                            <option id="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.DEFINE.1773071842" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.DEFINE" valueType="definedSymbols">
+                                <listOptionValue value="${SYSCONFIG_TOOL_SYMBOLS}"/>
+                                <listOptionValue value="${COM_TI_C2000WARE_SYMBOLS}"/>
+                                <listOptionValue value="${COM_TI_MOTOR_CONTROL_C2000WARE_SDK_SOFTWARE_PACKAGE_SYMBOLS}"/>
+                                <listOptionValue value="_INLINE"/>
+                                <listOptionValue value="_FLASH"/>
+                                <listOptionValue value="_F28P65x"/>
+                                <listOptionValue value="CPU1"/>
+                                <listOptionValue value="_SENSORED_CONTROL"/>
+                                <listOptionValue value="BXL_3PHGANINV"/>
+                                <listOptionValue value="MOTOR1_ENC"/>
+                                <listOptionValue value="SYSCONFIG_EN"/>
+                                <listOptionValue value="MOTOR1_OVM_N"/>
+                                <listOptionValue value="MOTOR1_FWC_N"/>
+                                <listOptionValue value="MOTOR1_MTPA_N"/>
+                                <listOptionValue value="MOTOR1_SSIPD_N"/>
+                                <listOptionValue value="DATALOGF2_EN_N"/>
+                                <listOptionValue value="DAC128S_ENABLE_N"/>
+                                <listOptionValue value="DAC128S_SPID_N"/>
+                                <listOptionValue value="DAC_ON_CHIP_ENABLE_N"/>
+                                <listOptionValue value="ADC_EXT_REF"/>
+                            </option>
+                        </tool>
+                    </fileInfo>
                     <sourceEntries>
                         <entry excluding="src_device/device_support/headers/include|src_control/common/debug|src_control/drivers/include/hal_obj.h|src_control/drivers/include/hal_data.h|src_control/common/include/user.h|src_control/common/include/user_common.h|src_device/driverlib|src_board/servo_drive_BXL_AMC0106_LMG_MD.syscfg|src_board/servo_drive_BXL_LMG2100_MD.syscfg|src_board/servo_drive_DRV8300DRGE_EVM.syscfg" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                     </sourceEntries>

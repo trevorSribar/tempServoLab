@@ -66,6 +66,8 @@ extern "C"
 #include <math.h>
 #endif
 
+#define DAC128S_ENABLE (1) //this was added afterwards to see if this would get the DACs running for page 65/66 of the pdf
+
 #if defined(DAC128S_ENABLE)
 #include "dac128s085.h"
 #endif  // DAC128S_ENABLE

@@ -78,7 +78,7 @@ extern "C"
 #define DMC_LEVEL_3     3   //Y closed current loop to check the hardware settings
 #define DMC_LEVEL_4     4   //Y Parameters identification and run with InstaSPIN-FOC
 
-#define DMC_BUILDLEVEL  DMC_LEVEL_3
+#define DMC_BUILDLEVEL  DMC_LEVEL_4
 
 // Add more definition if needed
 

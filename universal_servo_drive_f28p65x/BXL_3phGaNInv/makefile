@@ -6,7 +6,7 @@ SHELL = cmd.exe
 
 CG_TOOL_ROOT := C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS
 
-GEN_OPTS__FLAG := --cmd_file="syscfg/board.opt" --cmd_file="syscfg/c2000ware_libraries.opt" 
+GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
@@ -30,9 +30,6 @@ ORDERED_OBJS += \
 "./libraries/utilities/step_response/step_response.obj" \
 "./libraries/utilities/traj/traj.obj" \
 "./src_board/hal.obj" \
-"./syscfg/board.obj" \
-"./syscfg/device.obj" \
-"./syscfg/c2000ware_libraries.obj" \
 "./src_board/user_mtr1.obj" \
 "./src_control/motor1_drive.obj" \
 "./src_control/motor_common.obj" \
@@ -209,9 +206,9 @@ universal_servo_drive_f28p65x.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 
 # Other Targets
 clean:
-	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "sys_main.obj" "libraries\control\fwc\fwc.obj" "libraries\control\mtpa\mtpa.obj" "libraries\control\pi\pi.obj" "libraries\control\vs_freq\vs_freq.obj" "libraries\dacs\dac128s085\dac128s085.obj" "libraries\filter\filter_fo\filter_fo.obj" "libraries\observers\encoder\encoder.obj" "libraries\observers\speedcalc\speedcalc.obj" "libraries\observers\ssipd\ssipd.obj" "libraries\transforms\clarke\clarke.obj" "libraries\transforms\ipark\ipark.obj" "libraries\transforms\park\park.obj" "libraries\transforms\svgen\svgen.obj" "libraries\transforms\svgen\svgen_current.obj" "libraries\utilities\angle_gen\angle_gen.obj" "libraries\utilities\datalog\datalogIF.obj" "libraries\utilities\step_response\step_response.obj" "libraries\utilities\traj\traj.obj" "src_board\hal.obj" "syscfg\board.obj" "syscfg\device.obj" "syscfg\c2000ware_libraries.obj" "src_board\user_mtr1.obj" "src_control\motor1_drive.obj" "src_control\motor_common.obj" "src_device\f28p65x_codestartbranch.obj" "src_device\f28p65x_globalvariabledefs.obj" 
-	-$(RM) "sys_main.d" "libraries\control\fwc\fwc.d" "libraries\control\mtpa\mtpa.d" "libraries\control\pi\pi.d" "libraries\control\vs_freq\vs_freq.d" "libraries\dacs\dac128s085\dac128s085.d" "libraries\filter\filter_fo\filter_fo.d" "libraries\observers\encoder\encoder.d" "libraries\observers\speedcalc\speedcalc.d" "libraries\observers\ssipd\ssipd.d" "libraries\transforms\clarke\clarke.d" "libraries\transforms\ipark\ipark.d" "libraries\transforms\park\park.d" "libraries\transforms\svgen\svgen.d" "libraries\transforms\svgen\svgen_current.d" "libraries\utilities\angle_gen\angle_gen.d" "libraries\utilities\datalog\datalogIF.d" "libraries\utilities\step_response\step_response.d" "libraries\utilities\traj\traj.d" "src_board\hal.d" "syscfg\board.d" "syscfg\device.d" "syscfg\c2000ware_libraries.d" "src_board\user_mtr1.d" "src_control\motor1_drive.d" "src_control\motor_common.d" "src_device\f28p65x_globalvariabledefs.d" 
+	-$(RM) $(GEN_MISC_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
+	-$(RM) "sys_main.obj" "libraries\control\fwc\fwc.obj" "libraries\control\mtpa\mtpa.obj" "libraries\control\pi\pi.obj" "libraries\control\vs_freq\vs_freq.obj" "libraries\dacs\dac128s085\dac128s085.obj" "libraries\filter\filter_fo\filter_fo.obj" "libraries\observers\encoder\encoder.obj" "libraries\observers\speedcalc\speedcalc.obj" "libraries\observers\ssipd\ssipd.obj" "libraries\transforms\clarke\clarke.obj" "libraries\transforms\ipark\ipark.obj" "libraries\transforms\park\park.obj" "libraries\transforms\svgen\svgen.obj" "libraries\transforms\svgen\svgen_current.obj" "libraries\utilities\angle_gen\angle_gen.obj" "libraries\utilities\datalog\datalogIF.obj" "libraries\utilities\step_response\step_response.obj" "libraries\utilities\traj\traj.obj" "src_board\hal.obj" "src_board\user_mtr1.obj" "src_control\motor1_drive.obj" "src_control\motor_common.obj" "src_device\f28p65x_codestartbranch.obj" "src_device\f28p65x_globalvariabledefs.obj" 
+	-$(RM) "sys_main.d" "libraries\control\fwc\fwc.d" "libraries\control\mtpa\mtpa.d" "libraries\control\pi\pi.d" "libraries\control\vs_freq\vs_freq.d" "libraries\dacs\dac128s085\dac128s085.d" "libraries\filter\filter_fo\filter_fo.d" "libraries\observers\encoder\encoder.d" "libraries\observers\speedcalc\speedcalc.d" "libraries\observers\ssipd\ssipd.d" "libraries\transforms\clarke\clarke.d" "libraries\transforms\ipark\ipark.d" "libraries\transforms\park\park.d" "libraries\transforms\svgen\svgen.d" "libraries\transforms\svgen\svgen_current.d" "libraries\utilities\angle_gen\angle_gen.d" "libraries\utilities\datalog\datalogIF.d" "libraries\utilities\step_response\step_response.d" "libraries\utilities\traj\traj.d" "src_board\hal.d" "src_board\user_mtr1.d" "src_control\motor1_drive.d" "src_control\motor_common.d" "src_device\f28p65x_globalvariabledefs.d" 
 	-$(RM) "src_device\f28p65x_codestartbranch.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
