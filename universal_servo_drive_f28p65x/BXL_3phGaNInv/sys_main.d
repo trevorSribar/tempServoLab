@@ -137,6 +137,7 @@ sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control
 sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen_current.h
 sys_main.obj: ../sys_settings.h
 sys_main.obj: ../sys_main.h
+sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/dacs/dac128s085/dac128s085.h
 sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor_common.h
 sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/clarke/clarke.h
 sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/filter/filter_fo/filter_fo.h
@@ -427,6 +428,8 @@ C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svge
 ../sys_settings.h:
 
 ../sys_main.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/dacs/dac128s085/dac128s085.h:
 
 C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor_common.h:
 

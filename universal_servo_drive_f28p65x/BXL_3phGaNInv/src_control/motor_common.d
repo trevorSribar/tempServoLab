@@ -21,22 +21,7 @@ src_control/motor_common.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c2000_22.6
 src_control/motor_common.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include/string.h
 src_control/motor_common.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include/xlocale/_string.h
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/sys_main.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor_common.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/user_params/userParams.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/user_params/motor.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/clarke/clarke.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/filter/filter_fo/filter_fo.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/ipark/ipark.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/park/park.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/pi/pi.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen_current.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/traj/traj.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/fwc/fwc.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/mtpa/mtpa.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/vs_freq/vs_freq.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/angle_gen/angle_gen.h
-src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/encoder/encoder.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/dacs/dac128s085/dac128s085.h
 src_control/motor_common.obj: syscfg/device.h
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_device/driverlib.h
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_device/driverlib/inc/hw_memmap.h
@@ -143,6 +128,22 @@ src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_device/driverlib/version.h
 src_control/motor_common.obj: syscfg/clocktree.h
 src_control/motor_common.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include/stddef.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor_common.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/user_params/userParams.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/user_params/motor.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/clarke/clarke.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/filter/filter_fo/filter_fo.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/ipark/ipark.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/park/park.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/pi/pi.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen_current.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/traj/traj.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/fwc/fwc.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/mtpa/mtpa.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/vs_freq/vs_freq.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/angle_gen/angle_gen.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/encoder/encoder.h
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/speedcalc/speedcalc.h
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/common/include/user.h
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/common/include/user_common.h
@@ -196,37 +197,7 @@ C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include/xlocale/_string
 
 C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/sys_main.h:
 
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor_common.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/user_params/userParams.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/user_params/motor.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/clarke/clarke.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/filter/filter_fo/filter_fo.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/ipark/ipark.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/park/park.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/pi/pi.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen_current.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/traj/traj.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/fwc/fwc.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/mtpa/mtpa.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/vs_freq/vs_freq.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/angle_gen/angle_gen.h:
-
-C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/encoder/encoder.h:
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/dacs/dac128s085/dac128s085.h:
 
 syscfg/device.h:
 
@@ -439,6 +410,38 @@ C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_device/driverlib/vers
 syscfg/clocktree.h:
 
 C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include/stddef.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor_common.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/user_params/userParams.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/user_params/motor.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/clarke/clarke.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/filter/filter_fo/filter_fo.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/ipark/ipark.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/park/park.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/pi/pi.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/transforms/svgen/svgen_current.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/traj/traj.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/fwc/fwc.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/mtpa/mtpa.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/control/vs_freq/vs_freq.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/angle_gen/angle_gen.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/encoder/encoder.h:
 
 C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/speedcalc/speedcalc.h:
 

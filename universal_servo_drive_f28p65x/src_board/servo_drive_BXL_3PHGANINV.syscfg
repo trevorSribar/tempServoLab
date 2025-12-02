@@ -38,6 +38,8 @@ const gpio             = scripting.addModule("/driverlib/gpio.js", {}, false);
 const gpio1            = gpio.addInstance();
 const gpio2            = gpio.addInstance();
 const gpio3            = gpio.addInstance();
+const i2c              = scripting.addModule("/driverlib/i2c.js", {}, false);
+const i2c1             = i2c.addInstance();
 const inputxbar_input  = scripting.addModule("/driverlib/inputxbar_input.js", {}, false);
 const inputxbar_input1 = inputxbar_input.addInstance();
 const spi              = scripting.addModule("/driverlib/spi.js", {}, false);
@@ -458,6 +460,10 @@ gpio3.writeInitialValue = true;
 gpio3.direction         = "GPIO_DIR_MODE_OUT";
 gpio3.gpioPin.$assign   = "GPIO13";
 
+i2c1.$name       = "steerByWireOutput";
+i2c1.mode        = "TARGET";
+i2c1.initialMode = "RECEIVE_MODE";
+
 inputxbar_input1.$name         = "MTR1_PM_nFAULT_IN";
 inputxbar_input1.inputxbarGpio = "GPIO14";
 inputxbar_input1.inputxbarLock = true;
@@ -492,4 +498,7 @@ analog1.analog["b4, gpio215Pin"].$suggestSolution = "B4, GPIO215";
 analog1.analog["b7, gpio208Pin"].$suggestSolution = "B7, GPIO208";
 analog1.analog["c4, gpio205Pin"].$suggestSolution = "C4, GPIO205";
 analog1.analog["c7, gpio198Pin"].$suggestSolution = "C7, GPIO198";
+i2c1.i2c.$suggestSolution                         = "I2CA";
+i2c1.i2c.i2c_sdaPin.$suggestSolution              = "B8, GPIO217";
+i2c1.i2c.i2c_sclPin.$suggestSolution              = "B9, GPIO218";
 spi1.spi.$suggestSolution                         = "SPID";

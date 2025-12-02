@@ -145,6 +145,22 @@ extern "C"
 #define LAUNCHPAD_LED1_GPIO_PIN_CONFIG GPIO_13_GPIO13
 
 //
+// I2CA -> steerByWireOutput Pinmux
+//
+//
+// I2CA_SDA - GPIO Settings
+//
+#define GPIO_PIN_I2CA_SDA 217
+#define steerByWireOutput_I2CSDA_GPIO 217
+#define steerByWireOutput_I2CSDA_PIN_CONFIG GPIO_217_I2CA_SDA
+//
+// I2CA_SCL - GPIO Settings
+//
+#define GPIO_PIN_I2CA_SCL 218
+#define steerByWireOutput_I2CSCL_GPIO 218
+#define steerByWireOutput_I2CSCL_PIN_CONFIG GPIO_218_I2CA_SCL
+
+//
 // SPID -> DAC_SPI Pinmux
 //
 //
@@ -364,6 +380,18 @@ void LAUNCHPAD_LED1_init();
 
 //*****************************************************************************
 //
+// I2C Configurations
+//
+//*****************************************************************************
+#define steerByWireOutput_BASE I2CA_BASE
+#define steerByWireOutput_BITRATE 400000
+#define steerByWireOutput_TARGET_ADDRESS 0
+#define steerByWireOutput_OWN_ADDRESS 0
+#define steerByWireOutput_MODULE_CLOCK_FREQUENCY 10000000
+void steerByWireOutput_init();
+
+//*****************************************************************************
+//
 // INPUTXBAR Configurations
 //
 //*****************************************************************************
@@ -420,6 +448,7 @@ void	EPWM_init();
 void	EPWMXBAR_init();
 void	EQEP_init();
 void	GPIO_init();
+void	I2C_init();
 void	INPUTXBAR_init();
 void	INTERRUPT_init();
 void	SPI_init();
