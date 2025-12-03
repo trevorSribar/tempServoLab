@@ -60,7 +60,6 @@ void Board_init()
 	EPWMXBAR_init();
 	EQEP_init();
 	GPIO_init();
-	I2C_init();
 	SPI_init();
 	INTERRUPT_init();
 
@@ -97,6 +96,10 @@ void PinMux_init()
 	GPIO_setPinConfig(GPIO_210_GPIO210);
 	// AGPIO -> Analog mode selected
 	GPIO_setAnalogMode(210, GPIO_ANALOG_ENABLED);
+	// Analog PinMux for A8, GPIO211
+	GPIO_setPinConfig(GPIO_211_GPIO211);
+	// AGPIO -> Analog mode selected
+	GPIO_setAnalogMode(211, GPIO_ANALOG_ENABLED);
 	// Analog PinMux for B1/DACC_OUT
 	GPIO_setPinConfig(GPIO_234_GPIO234);
 	// AIO -> Analog mode selected
@@ -171,21 +174,6 @@ void PinMux_init()
 	GPIO_setPinConfig(GPIO_14_GPIO14);
 	// GPIO13 -> LAUNCHPAD_LED1 Pinmux
 	GPIO_setPinConfig(GPIO_13_GPIO13);
-	//
-	// I2CA -> steerByWireOutput Pinmux
-	//
-	GPIO_setPinConfig(steerByWireOutput_I2CSDA_PIN_CONFIG);
-	// AGPIO -> GPIO mode selected
-	GPIO_setAnalogMode(217, GPIO_ANALOG_DISABLED);
-	GPIO_setPadConfig(steerByWireOutput_I2CSDA_GPIO, GPIO_PIN_TYPE_STD | GPIO_PIN_TYPE_PULLUP);
-	GPIO_setQualificationMode(steerByWireOutput_I2CSDA_GPIO, GPIO_QUAL_ASYNC);
-
-	GPIO_setPinConfig(steerByWireOutput_I2CSCL_PIN_CONFIG);
-	// AGPIO -> GPIO mode selected
-	GPIO_setAnalogMode(218, GPIO_ANALOG_DISABLED);
-	GPIO_setPadConfig(steerByWireOutput_I2CSCL_GPIO, GPIO_PIN_TYPE_STD | GPIO_PIN_TYPE_PULLUP);
-	GPIO_setQualificationMode(steerByWireOutput_I2CSCL_GPIO, GPIO_QUAL_ASYNC);
-
 	//
 	// SPID -> DAC_SPI Pinmux
 	//
@@ -297,6 +285,19 @@ void ADCA_CONFIG_init(){
 	//
 	ADC_setupSOC(ADCA_CONFIG_BASE, ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM5_SOCA, ADC_CH_ADCIN14, 20U);
 	ADC_setInterruptSOCTrigger(ADCA_CONFIG_BASE, ADC_SOC_NUMBER2, ADC_INT_SOC_TRIGGER_NONE);
+	//
+	// Start of Conversion 8 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 8
+	//	  	Trigger			: ADC_TRIGGER_SW_ONLY
+	//	  	Channel			: ADC_CH_ADCIN8
+	//	 	Sample Window	: 20 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(ADCA_CONFIG_BASE, ADC_SOC_NUMBER8, ADC_TRIGGER_SW_ONLY, ADC_CH_ADCIN8, 20U);
+	ADC_setInterruptSOCTrigger(ADCA_CONFIG_BASE, ADC_SOC_NUMBER8, ADC_INT_SOC_TRIGGER_NONE);
 	//
 	// ADC Interrupt 1 Configuration
 	// 		Source	: ADC_INT_TRIGGER_EOC2
@@ -1480,30 +1481,6 @@ void LAUNCHPAD_LED1_init(){
 	GPIO_setQualificationMode(LAUNCHPAD_LED1, GPIO_QUAL_SYNC);
 	GPIO_setDirectionMode(LAUNCHPAD_LED1, GPIO_DIR_MODE_OUT);
 	GPIO_setControllerCore(LAUNCHPAD_LED1, GPIO_CORE_CPU1);
-}
-
-//*****************************************************************************
-//
-// I2C Configurations
-//
-//*****************************************************************************
-void I2C_init(){
-	steerByWireOutput_init();
-}
-
-void steerByWireOutput_init(){
-	I2C_disableModule(steerByWireOutput_BASE);
-	I2C_configureModuleFrequency(steerByWireOutput_BASE, DEVICE_SYSCLK_FREQ);
-	I2C_setConfig(steerByWireOutput_BASE, I2C_TARGET_RECEIVE_MODE);
-	I2C_setOwnAddress(steerByWireOutput_BASE, steerByWireOutput_OWN_ADDRESS);
-	I2C_setTargetAddress(steerByWireOutput_BASE, steerByWireOutput_TARGET_ADDRESS);
-	I2C_setBitCount(steerByWireOutput_BASE, I2C_BITCOUNT_1);
-	I2C_setDataCount(steerByWireOutput_BASE, 1);
-	I2C_setAddressMode(steerByWireOutput_BASE, I2C_ADDR_MODE_7BITS);
-	I2C_enableFIFO(steerByWireOutput_BASE);
-	I2C_setFIFOInterruptLevel(steerByWireOutput_BASE, I2C_FIFO_TXEMPTY, I2C_FIFO_RXEMPTY);
-	I2C_setEmulationMode(steerByWireOutput_BASE, I2C_EMULATION_STOP_SCL_LOW);
-	I2C_enableModule(steerByWireOutput_BASE);
 }
 
 //*****************************************************************************

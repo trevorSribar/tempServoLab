@@ -77,6 +77,7 @@ extern "C"
 #include "motor1_drive.h"
 
 #include "datalogIF.h"
+#include "src_throttleInput\throttle_input.h"
 
 #define LED_BLINK_FREQ_Hz           (0.5f)       // 1Hz
 #define POWER_RELAY_WAIT_TIME_ms    (1000)       // 1s

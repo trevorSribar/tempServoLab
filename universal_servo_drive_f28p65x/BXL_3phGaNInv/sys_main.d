@@ -154,6 +154,7 @@ sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/o
 sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/speedcalc/speedcalc.h
 sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor1_drive.h
 sys_main.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/datalog/datalogIF.h
+sys_main.obj: ../src_throttleInput/throttle_input.h
 
 ../sys_main.c:
 
@@ -462,4 +463,6 @@ C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/observers/speed
 C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor1_drive.h:
 
 C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/datalog/datalogIF.h:
+
+../src_throttleInput/throttle_input.h:
 

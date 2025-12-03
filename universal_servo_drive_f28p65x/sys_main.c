@@ -340,6 +340,14 @@ void main(void)
         // runs control for motor 1
         runMotor1Control(motorHandle_M1);
 
+        
+#if throttle_input_enable
+
+    motorVars_M1.speedRef_Hz = throttle_get_newest_speedFreq();
+
+#endif
+
+
     } // end of while() loop
 
     // disable the PWM

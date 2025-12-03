@@ -154,6 +154,7 @@ src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/drivers/include/hal_data.h
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor1_drive.h
 src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/datalog/datalogIF.h
+src_control/motor_common.obj: C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_throttleInput/throttle_input.h
 
 ../src_control/motor_common.c:
 
@@ -462,4 +463,6 @@ C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/drivers/inclu
 C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_control/motor1_drive.h:
 
 C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/libraries/utilities/datalog/datalogIF.h:
+
+C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_throttleInput/throttle_input.h:
 

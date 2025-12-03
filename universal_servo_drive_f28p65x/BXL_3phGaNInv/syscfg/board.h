@@ -145,22 +145,6 @@ extern "C"
 #define LAUNCHPAD_LED1_GPIO_PIN_CONFIG GPIO_13_GPIO13
 
 //
-// I2CA -> steerByWireOutput Pinmux
-//
-//
-// I2CA_SDA - GPIO Settings
-//
-#define GPIO_PIN_I2CA_SDA 217
-#define steerByWireOutput_I2CSDA_GPIO 217
-#define steerByWireOutput_I2CSDA_PIN_CONFIG GPIO_217_I2CA_SDA
-//
-// I2CA_SCL - GPIO Settings
-//
-#define GPIO_PIN_I2CA_SCL 218
-#define steerByWireOutput_I2CSCL_GPIO 218
-#define steerByWireOutput_I2CSCL_PIN_CONFIG GPIO_218_I2CA_SCL
-
-//
 // SPID -> DAC_SPI Pinmux
 //
 //
@@ -210,6 +194,11 @@ extern "C"
 #define MTR1_VDC_SAMPLE_WINDOW 100
 #define MTR1_VDC_TRIGGER_SOURCE ADC_TRIGGER_EPWM5_SOCA
 #define MTR1_VDC_CHANNEL ADC_CH_ADCIN14
+#define ADCA_CONFIG_SOC8 ADC_SOC_NUMBER8
+#define ADCA_CONFIG_FORCE_SOC8 ADC_FORCE_SOC8
+#define ADCA_CONFIG_SAMPLE_WINDOW_SOC8 100
+#define ADCA_CONFIG_TRIGGER_SOURCE_SOC8 ADC_TRIGGER_SW_ONLY
+#define ADCA_CONFIG_CHANNEL_SOC8 ADC_CH_ADCIN8
 #define MTR1_IU_PPB ADC_PPB_NUMBER1
 #define MTR1_IU_PPB_SOC ADC_SOC_NUMBER0
 void ADCA_CONFIG_init();
@@ -380,18 +369,6 @@ void LAUNCHPAD_LED1_init();
 
 //*****************************************************************************
 //
-// I2C Configurations
-//
-//*****************************************************************************
-#define steerByWireOutput_BASE I2CA_BASE
-#define steerByWireOutput_BITRATE 400000
-#define steerByWireOutput_TARGET_ADDRESS 0
-#define steerByWireOutput_OWN_ADDRESS 0
-#define steerByWireOutput_MODULE_CLOCK_FREQUENCY 10000000
-void steerByWireOutput_init();
-
-//*****************************************************************************
-//
 // INPUTXBAR Configurations
 //
 //*****************************************************************************
@@ -448,7 +425,6 @@ void	EPWM_init();
 void	EPWMXBAR_init();
 void	EQEP_init();
 void	GPIO_init();
-void	I2C_init();
 void	INPUTXBAR_init();
 void	INTERRUPT_init();
 void	SPI_init();

@@ -42,5 +42,7 @@ encoding//BXL_3phGaNInv/src_control/subdir_rules.mk=UTF-8
 encoding//BXL_3phGaNInv/src_control/subdir_vars.mk=UTF-8
 encoding//BXL_3phGaNInv/src_device/subdir_rules.mk=UTF-8
 encoding//BXL_3phGaNInv/src_device/subdir_vars.mk=UTF-8
+encoding//BXL_3phGaNInv/src_throttleInput/subdir_rules.mk=UTF-8
+encoding//BXL_3phGaNInv/src_throttleInput/subdir_vars.mk=UTF-8
 encoding//BXL_3phGaNInv/subdir_rules.mk=UTF-8
 encoding//BXL_3phGaNInv/subdir_vars.mk=UTF-8
