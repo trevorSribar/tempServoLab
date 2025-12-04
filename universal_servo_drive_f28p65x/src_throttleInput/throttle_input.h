@@ -24,13 +24,13 @@
 #define throttle_thresh_max_1   (float32_t)2.7
 #define throttle_thresh_max_2   (float32_t)3.15
 
-#define throttle_speed_n3   (float32_t)-100.0
-#define throttle_speed_n2   (float32_t)-40.0
-#define throttle_speed_n1   (float32_t)-16.0
+#define throttle_speed_n3   (float32_t)-120.0
+#define throttle_speed_n2   (float32_t)-80.0
+#define throttle_speed_n1   (float32_t)-30.0
 #define throttle_speed_0    (float32_t)0.0
-#define throttle_speed_1    (float32_t)16.0
-#define throttle_speed_2    (float32_t)40.0
-#define throttle_speed_3    (float32_t)100.0
+#define throttle_speed_1    (float32_t)30.0
+#define throttle_speed_2    (float32_t)80.0
+#define throttle_speed_3    (float32_t)120.0
 
 float32_t throttle_get_ADC_Val();
 
