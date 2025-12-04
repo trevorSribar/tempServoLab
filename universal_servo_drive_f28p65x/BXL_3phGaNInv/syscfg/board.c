@@ -80,6 +80,10 @@ void PinMux_init()
 	//
 	// ANALOG -> myANALOGPinMux0 Pinmux
 	//
+	// Analog PinMux for A10, GPIO213
+	GPIO_setPinConfig(GPIO_213_GPIO213);
+	// AGPIO -> Analog mode selected
+	GPIO_setAnalogMode(213, GPIO_ANALOG_ENABLED);
 	// Analog PinMux for A14/B14/C14
 	GPIO_setPinConfig(GPIO_225_GPIO225);
 	// AIO -> Analog mode selected
@@ -116,6 +120,10 @@ void PinMux_init()
 	GPIO_setPinConfig(GPIO_205_GPIO205);
 	// AGPIO -> Analog mode selected
 	GPIO_setAnalogMode(205, GPIO_ANALOG_ENABLED);
+	// Analog PinMux for C5, GPIO204
+	GPIO_setPinConfig(GPIO_204_GPIO204);
+	// AGPIO -> Analog mode selected
+	GPIO_setAnalogMode(204, GPIO_ANALOG_ENABLED);
 	// Analog PinMux for C7, GPIO198
 	GPIO_setPinConfig(GPIO_198_GPIO198);
 	// AGPIO -> Analog mode selected
@@ -298,6 +306,19 @@ void ADCA_CONFIG_init(){
 	//
 	ADC_setupSOC(ADCA_CONFIG_BASE, ADC_SOC_NUMBER8, ADC_TRIGGER_SW_ONLY, ADC_CH_ADCIN8, 20U);
 	ADC_setInterruptSOCTrigger(ADCA_CONFIG_BASE, ADC_SOC_NUMBER8, ADC_INT_SOC_TRIGGER_NONE);
+	//
+	// Start of Conversion 10 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 10
+	//	  	Trigger			: ADC_TRIGGER_SW_ONLY
+	//	  	Channel			: ADC_CH_ADCIN10
+	//	 	Sample Window	: 20 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(ADCA_CONFIG_BASE, ADC_SOC_NUMBER10, ADC_TRIGGER_SW_ONLY, ADC_CH_ADCIN10, 20U);
+	ADC_setInterruptSOCTrigger(ADCA_CONFIG_BASE, ADC_SOC_NUMBER10, ADC_INT_SOC_TRIGGER_NONE);
 	//
 	// ADC Interrupt 1 Configuration
 	// 		Source	: ADC_INT_TRIGGER_EOC2
@@ -517,6 +538,19 @@ void ADCC_CONFIG_init(){
 	//
 	ADC_setupSOC(ADCC_CONFIG_BASE, ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM5_SOCA, ADC_CH_ADCIN4, 20U);
 	ADC_setInterruptSOCTrigger(ADCC_CONFIG_BASE, ADC_SOC_NUMBER1, ADC_INT_SOC_TRIGGER_NONE);
+	//
+	// Start of Conversion 5 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 5
+	//	  	Trigger			: ADC_TRIGGER_EPWM5_SOCA
+	//	  	Channel			: ADC_CH_ADCIN5
+	//	 	Sample Window	: 15 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(ADCC_CONFIG_BASE, ADC_SOC_NUMBER5, ADC_TRIGGER_EPWM5_SOCA, ADC_CH_ADCIN5, 15U);
+	ADC_setInterruptSOCTrigger(ADCC_CONFIG_BASE, ADC_SOC_NUMBER5, ADC_INT_SOC_TRIGGER_NONE);
 			
 	//
 	// PPB Configuration: Configure high and low limits detection for ADCPPB

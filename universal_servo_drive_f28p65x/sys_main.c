@@ -261,6 +261,9 @@ void main(void)
     // Waiting for enable system flag to be set
     while(systemVars.flagEnableSystem == false)
     {
+        
+        motorVars_M1.speedRef_Hz = throttle_get_newest_speedFreq();
+
         if(HAL_getCPUTimerStatus(halHandle, HAL_CPU_TIMER0))
         {
             HAL_clearCPUTimerFlag(halHandle, HAL_CPU_TIMER0);
