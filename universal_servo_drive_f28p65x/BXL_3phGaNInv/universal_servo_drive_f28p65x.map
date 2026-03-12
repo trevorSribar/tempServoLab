@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.2                     
 ******************************************************************************
->> Linked Thu Dec  4 09:33:06 2025
+>> Linked Wed Mar 11 18:58:48 2026
 
 OUTPUT FILE NAME:   <universal_servo_drive_f28p65x.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00080000
@@ -139,7 +139,7 @@ MEMORY CONFIGURATION
   FLASH0CTRL            0005f800   00000182  00000000  00000182  RWIX
   FLASH0ECC             0005fb00   00000028  00000000  00000028  RWIX
   BEGIN                 00080000   00000002  00000002  00000000  RWIX
-  FLASH_BANK0_CODE      00080002   00010000  0000374a  0000c8b6  RWIX
+  FLASH_BANK0_CODE      00080002   00010000  0000372a  0000c8d6  RWIX
   FLASH_BANK0_DATA      00090002   0000fffe  0000003c  0000ffc2  RWIX
   FLASH_BANK1           000a0000   00020000  00000000  00020000  RWIX
   FLASH_BANK2           000c0000   00020000  00000000  00020000  RWIX
@@ -180,7 +180,7 @@ codestart
 *          0    00080000    00000002     
                   00080000    00000002     f28p65x_codestartbranch.obj (codestart)
 
-.text      0    00080008    00003141     
+.text      0    00080008    00003121     
                   00080008    00000774     board.obj (.text:SYSCTL_init)
                   0008077c    00000455     board.obj (.text:EPWM_init)
                   00080bd1    00000001     rts2800_fpu64_eabi.lib : startup.c.obj (.text)
@@ -188,134 +188,134 @@ codestart
                   00080e9d    00000259     motor1_drive.obj (.text:runMotor1Control)
                   000810f6    00000237     motor1_drive.obj (.text:initMotor1CtrlParameters)
                   0008132d    000001af     motor_common.obj (.text:runMotorMonitor)
-                  000814dc    00000189     sys_main.obj (.text:main)
-                  00081665    00000126     board.obj (.text:PinMux_init)
-                  0008178b    0000011e     driverlib.lib : sysctl.obj (.text:SysCtl_setClock)
-                  000818a9    0000011e     motor_common.obj (.text:setupControllers)
-                  000819c7    000000ff     driverlib.lib : sysctl.obj (.text:SysCtl_isPLLValid)
-                  00081ac6    000000f9     board.obj (.text:ADCA_CONFIG_init)
-                  00081bbf    000000e9     driverlib.lib : sysctl.obj (.text:SysCtl_setAuxClock)
-                  00081ca8    000000c5     board.obj (.text:MTR1_CMPSS_V_init)
-                  00081d6d    000000c3     board.obj (.text:ADCC_CONFIG_init)
-                  00081e30    000000c1     board.obj (.text:MTR1_CMPSS_W_init)
-                  00081ef1    000000c0     board.obj (.text:MTR1_CMPSS_U_L_init)
-                  00081fb1    000000b9     board.obj (.text:MTR1_CMPSS_U_H_init)
-                  0008206a    000000b2     board.obj (.text:ADCB_CONFIG_init)
-                  0008211c    000000aa     user_mtr1.obj (.text:USER_setMotor1Params)
-                  000821c6    0000009a     board.obj (.text:MTR1_QEP_init)
-                  00082260    00000095     throttle_input.obj (.text:throttle_get_newest_speedFreq)
-                  000822f5    0000008d     device.obj (.text:Device_init)
-                  00082382    00000088     rts2800_fpu64_eabi.lib : fs_div28.asm.obj (.text)
-                  0008240a    00000079     motor_common.obj (.text:calculateRMSData)
-                  00082483    00000075     motor_common.obj (.text:resetMotorControl)
-                  000824f8    00000074     driverlib.lib : interrupt.obj (.text:Interrupt_clearIFR)
-                  0008256c    0000005a                   : gpio.obj (.text:GPIO_setAnalogMode)
-                  000825c6    00000056     dac128s085.obj (.text:DAC128S_writeData)
-                  0008261c    0000004d     driverlib.lib : sysctl.obj (.text:SysCtl_selectOscSourceAuxPLL)
-                  00082669    0000004b     board.obj (.text:DAC_SPI_init)
-                  000826b4    0000004a     driverlib.lib : interrupt.obj (.text:Interrupt_disable)
-                  000826fe    0000004a     motor_common.obj (.text:collectRMSData)
-                  00082748    00000049     motor_common.obj (.text:updateGlobalVariables)
-                  00082791    00000045     driverlib.lib : sysctl.obj (.text:SysCtl_selectXTAL)
-                  000827d6    00000041                   : adc.obj (.text:ADC_setINLTrim)
-                  00082817    00000041     board.obj (.text:CPUTIMER_CpuUsage_init)
-                  00082858    00000041     driverlib.lib : interrupt.obj (.text:Interrupt_initModule)
-                  00082899    0000003f                   : gpio.obj (.text:GPIO_setPadConfig)
-                  000828d8    0000003f                   : xbar.obj (.text:XBAR_setEPWMMuxConfig)
-                  00082917    0000003e                   : sysctl.obj (.text:SysCtl_pollX1Counter)
-                  00082955    0000003b     hal.obj (.text:HAL_MTR_setParams)
-                  00082990    00000036     driverlib.lib : interrupt.obj (.text:Interrupt_enable)
-                  000829c6    00000035                   : eqep.obj (.text:EQEP_setInputPolarity)
-                  000829fb    00000032     board.obj (.text:CPUTIMER_TimeBase_init)
-                  00082a2d    00000032     speedcalc.obj (.text:SPDCALC_setParams)
-                  00082a5f    00000031     driverlib.lib : adc.obj (.text:ADC_setPPBTripLimits)
-                  00082a90    00000031     dac128s085.obj (.text:DAC128S_writeCommand)
-                  00082ac1    00000031     motor_common.obj (.text:restartMotorControl)
-                  00082af2    00000030     driverlib.lib : gpio.obj (.text:GPIO_setPinConfig)
-                  00082b22    0000002f     hal.obj (.text:HAL_MTR1_init)
-                  00082b51    0000002e     motor_common.obj (.text:calcMotorOverCurrentThreshold)
-                  00082b7f    0000002e     rts2800_fpu64_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss)
-                  00082bad    0000002d     driverlib.lib : adc.obj (.text:ADC_setVREF)
-                  00082bda    0000002d     board.obj (.text:Board_init)
-                  00082c07    0000002d     hal.obj (.text:HAL_init)
-                  00082c34    0000002d     board.obj (.text:MTR1_IS_TRIP_CMPSS_init)
-                  00082c61    0000002b     driverlib.lib : sysctl.obj (.text:SysCtl_selectOscSource)
-                  00082c8c    0000002b     rts2800_fpu64_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
-                  00082cb7    00000029                            : exit.c.obj (.text)
-                  00082ce0    00000028     driverlib.lib : cmpss.obj (.text:CMPSS_configRampLow)
-                  00082d08    00000024                   : cmpss.obj (.text:CMPSS_configRampHigh)
-                  00082d2c    00000023     board.obj (.text:MTR1_DAC_init)
-                  00082d4f    00000022     driverlib.lib : gpio.obj (.text:GPIO_setControllerCore)
-                  00082d71    00000022                   : gpio.obj (.text:GPIO_setQualificationMode)
-                  00082d93    00000021                   : sysctl.obj (.text:SysCtl_configureType)
-                  00082db4    00000021                   : sysctl.obj (.text:SysCtl_selectXTALSingleEnded)
-                  00082dd5    00000020     device.obj (.text:Device_initGPIO)
-                  00082df5    00000020     driverlib.lib : gpio.obj (.text:GPIO_setDirectionMode)
-                  00082e15    00000020     hal.obj (.text:HAL_setTriggerPrams)
-                  00082e35    00000020     motor_common.obj (.text:stopMotorControl)
-                  00082e55    0000001f     driverlib.lib : spi.obj (.text:SPI_setConfig)
-                  00082e74    0000001e                   : spi.obj (.text:SPI_clearInterruptStatus)
-                  00082e92    0000001d     rts2800_fpu64_eabi.lib : memcpy.c.obj (.text)
-                  00082eaf    0000001c     driverlib.lib : cmpss.obj (.text:CMPSS_configFilterHigh)
-                  00082ecb    0000001c                   : cmpss.obj (.text:CMPSS_configFilterLow)
-                  00082ee7    0000001c                   : ipc.obj (.text:IPC_unregisterInterrupt)
-                  00082f03    0000001b     hal.obj (.text:HAL_setMtrCMPSSDACValue)
-                  00082f1e    00000019     board.obj (.text:SysCtl_enablePeripheral)
-                  00082f37    00000019     rts2800_fpu64_eabi.lib : boot28.asm.obj (.text)
-                  00082f50    00000019     motor_common.obj (.text:setupClarke_I)
-                  00082f69    00000018     encoder.obj (.text:ENC_setParams)
-                  00082f81    00000018     board.obj (.text:GPIO_init)
-                  00082f99    00000018     board.obj (.text:LAUNCHPAD_LED1_init)
-                  00082fb1    00000018     board.obj (.text:MTR1_GATE_EN_init)
-                  00082fc9    00000015     driverlib.lib : cmpss.obj (.text:CMPSS_configLatchOnPWMSYNC)
-                  00082fde    00000015                   : interrupt.obj (.text:Interrupt_initVectorTable)
-                  00082ff3    00000015     board.obj (.text:SysCtl_selectCPUForPeripheralInstance)
-                  00083008    00000015     motor1_drive.obj (.text:initMotor1Handles)
-                  0008301d    00000012     hal.obj (.text:HAL_enableDRV)
-                  0008302f    00000012     board.obj (.text:SysCtl_setPeripheralAccessControl)
-                  00083041    00000011     driverlib.lib : adc.obj (.text:ADC_setMode)
-                  00083052    00000011     board.obj (.text:SYNC_init)
-                  00083063    00000010     hal.obj (.text:HAL_MTR_setGateDriver)
-                  00083073    0000000e     hal.obj (.text:HAL_setParams)
-                  00083081    0000000d     angle_gen.obj (.text:ANGLE_GEN_setParams)
-                  0008308e    0000000d     rts2800_fpu64_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
-                  0008309b    0000000c     board.obj (.text:INTERRUPT_init)
-                  000830a7    0000000c     driverlib.lib : interrupt.obj (.text:Interrupt_defaultHandler)
-                  000830b3    0000000c     rts2800_fpu64_eabi.lib : args_main.c.obj (.text)
-                  000830bf    0000000b     board.obj (.text:ASYSCTL_init)
-                  000830ca    0000000a     dac128s085.obj (.text:DAC128S_init)
-                  000830d4    0000000a     driverlib.lib : interrupt.obj (.text:Interrupt_illegalOperationHandler)
-                  000830de    0000000a                   : interrupt.obj (.text:Interrupt_nmiHandler)
-                  000830e8    00000009     board.obj (.text:MTR1_PM_nFAULT_IN_init)
-                  000830f1    00000009     rts2800_fpu64_eabi.lib : _lock.c.obj (.text)
-                  000830fa    00000008                            : copy_decompress_none.c.obj (.text:decompress:none)
-                  00083102    00000008     f28p65x_codestartbranch.obj (.text)
-                  0008310a    00000007     hal.obj (.text:HAL_clearDataRAM)
-                  00083111    00000006     driverlib.lib : adc.obj (.text:ADC_setOffsetTrim)
-                  00083117    00000006     angle_gen.obj (.text:ANGLE_GEN_init)
-                  0008311d    00000006     driverlib.lib : cputimer.obj (.text:CPUTimer_setEmulationMode)
-                  00083123    00000006     encoder.obj (.text:ENC_init)
-                  00083129    00000006     speedcalc.obj (.text:SPDCALC_init)
-                  0008312f    00000004     clarke.obj (.text:CLARKE_init)
-                  00083133    00000004     ipark.obj (.text:IPARK_init)
-                  00083137    00000004     park.obj (.text:PARK_init)
-                  0008313b    00000004     pi.obj (.text:PI_init)
-                  0008313f    00000004     svgen.obj (.text:SVGEN_init)
-                  00083143    00000004     traj.obj (.text:TRAJ_init)
-                  00083147    00000002     rts2800_fpu64_eabi.lib : pre_init.c.obj (.text)
+                  000814dc    0000018c     sys_main.obj (.text:main)
+                  00081668    00000126     board.obj (.text:PinMux_init)
+                  0008178e    0000011e     driverlib.lib : sysctl.obj (.text:SysCtl_setClock)
+                  000818ac    0000011e     motor_common.obj (.text:setupControllers)
+                  000819ca    000000ff     driverlib.lib : sysctl.obj (.text:SysCtl_isPLLValid)
+                  00081ac9    000000f9     board.obj (.text:ADCA_CONFIG_init)
+                  00081bc2    000000e9     driverlib.lib : sysctl.obj (.text:SysCtl_setAuxClock)
+                  00081cab    000000c5     board.obj (.text:MTR1_CMPSS_V_init)
+                  00081d70    000000c3     board.obj (.text:ADCC_CONFIG_init)
+                  00081e33    000000c1     board.obj (.text:MTR1_CMPSS_W_init)
+                  00081ef4    000000c0     board.obj (.text:MTR1_CMPSS_U_L_init)
+                  00081fb4    000000b9     board.obj (.text:MTR1_CMPSS_U_H_init)
+                  0008206d    000000b2     board.obj (.text:ADCB_CONFIG_init)
+                  0008211f    000000aa     user_mtr1.obj (.text:USER_setMotor1Params)
+                  000821c9    0000009a     board.obj (.text:MTR1_QEP_init)
+                  00082263    0000008d     device.obj (.text:Device_init)
+                  000822f0    00000088     rts2800_fpu64_eabi.lib : fs_div28.asm.obj (.text)
+                  00082378    00000079     motor_common.obj (.text:calculateRMSData)
+                  000823f1    00000075     motor_common.obj (.text:resetMotorControl)
+                  00082466    00000074     driverlib.lib : interrupt.obj (.text:Interrupt_clearIFR)
+                  000824da    00000072     throttle_input.obj (.text:throttle_get_newest_speedFreq)
+                  0008254c    0000005a     driverlib.lib : gpio.obj (.text:GPIO_setAnalogMode)
+                  000825a6    00000056     dac128s085.obj (.text:DAC128S_writeData)
+                  000825fc    0000004d     driverlib.lib : sysctl.obj (.text:SysCtl_selectOscSourceAuxPLL)
+                  00082649    0000004b     board.obj (.text:DAC_SPI_init)
+                  00082694    0000004a     driverlib.lib : interrupt.obj (.text:Interrupt_disable)
+                  000826de    0000004a     motor_common.obj (.text:collectRMSData)
+                  00082728    00000049     motor_common.obj (.text:updateGlobalVariables)
+                  00082771    00000045     driverlib.lib : sysctl.obj (.text:SysCtl_selectXTAL)
+                  000827b6    00000041                   : adc.obj (.text:ADC_setINLTrim)
+                  000827f7    00000041     board.obj (.text:CPUTIMER_CpuUsage_init)
+                  00082838    00000041     driverlib.lib : interrupt.obj (.text:Interrupt_initModule)
+                  00082879    0000003f                   : gpio.obj (.text:GPIO_setPadConfig)
+                  000828b8    0000003f                   : xbar.obj (.text:XBAR_setEPWMMuxConfig)
+                  000828f7    0000003e                   : sysctl.obj (.text:SysCtl_pollX1Counter)
+                  00082935    0000003b     hal.obj (.text:HAL_MTR_setParams)
+                  00082970    00000036     driverlib.lib : interrupt.obj (.text:Interrupt_enable)
+                  000829a6    00000035                   : eqep.obj (.text:EQEP_setInputPolarity)
+                  000829db    00000032     board.obj (.text:CPUTIMER_TimeBase_init)
+                  00082a0d    00000032     speedcalc.obj (.text:SPDCALC_setParams)
+                  00082a3f    00000031     driverlib.lib : adc.obj (.text:ADC_setPPBTripLimits)
+                  00082a70    00000031     dac128s085.obj (.text:DAC128S_writeCommand)
+                  00082aa1    00000031     motor_common.obj (.text:restartMotorControl)
+                  00082ad2    00000030     driverlib.lib : gpio.obj (.text:GPIO_setPinConfig)
+                  00082b02    0000002f     hal.obj (.text:HAL_MTR1_init)
+                  00082b31    0000002e     motor_common.obj (.text:calcMotorOverCurrentThreshold)
+                  00082b5f    0000002e     rts2800_fpu64_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  00082b8d    0000002d     driverlib.lib : adc.obj (.text:ADC_setVREF)
+                  00082bba    0000002d     board.obj (.text:Board_init)
+                  00082be7    0000002d     hal.obj (.text:HAL_init)
+                  00082c14    0000002d     board.obj (.text:MTR1_IS_TRIP_CMPSS_init)
+                  00082c41    0000002b     driverlib.lib : sysctl.obj (.text:SysCtl_selectOscSource)
+                  00082c6c    0000002b     rts2800_fpu64_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  00082c97    00000029                            : exit.c.obj (.text)
+                  00082cc0    00000028     driverlib.lib : cmpss.obj (.text:CMPSS_configRampLow)
+                  00082ce8    00000024                   : cmpss.obj (.text:CMPSS_configRampHigh)
+                  00082d0c    00000023     board.obj (.text:MTR1_DAC_init)
+                  00082d2f    00000022     driverlib.lib : gpio.obj (.text:GPIO_setControllerCore)
+                  00082d51    00000022                   : gpio.obj (.text:GPIO_setQualificationMode)
+                  00082d73    00000021                   : sysctl.obj (.text:SysCtl_configureType)
+                  00082d94    00000021                   : sysctl.obj (.text:SysCtl_selectXTALSingleEnded)
+                  00082db5    00000020     device.obj (.text:Device_initGPIO)
+                  00082dd5    00000020     driverlib.lib : gpio.obj (.text:GPIO_setDirectionMode)
+                  00082df5    00000020     hal.obj (.text:HAL_setTriggerPrams)
+                  00082e15    00000020     motor_common.obj (.text:stopMotorControl)
+                  00082e35    0000001f     driverlib.lib : spi.obj (.text:SPI_setConfig)
+                  00082e54    0000001e                   : spi.obj (.text:SPI_clearInterruptStatus)
+                  00082e72    0000001d     rts2800_fpu64_eabi.lib : memcpy.c.obj (.text)
+                  00082e8f    0000001c     driverlib.lib : cmpss.obj (.text:CMPSS_configFilterHigh)
+                  00082eab    0000001c                   : cmpss.obj (.text:CMPSS_configFilterLow)
+                  00082ec7    0000001c                   : ipc.obj (.text:IPC_unregisterInterrupt)
+                  00082ee3    0000001b     hal.obj (.text:HAL_setMtrCMPSSDACValue)
+                  00082efe    00000019     board.obj (.text:SysCtl_enablePeripheral)
+                  00082f17    00000019     rts2800_fpu64_eabi.lib : boot28.asm.obj (.text)
+                  00082f30    00000019     motor_common.obj (.text:setupClarke_I)
+                  00082f49    00000018     encoder.obj (.text:ENC_setParams)
+                  00082f61    00000018     board.obj (.text:GPIO_init)
+                  00082f79    00000018     board.obj (.text:LAUNCHPAD_LED1_init)
+                  00082f91    00000018     board.obj (.text:MTR1_GATE_EN_init)
+                  00082fa9    00000015     driverlib.lib : cmpss.obj (.text:CMPSS_configLatchOnPWMSYNC)
+                  00082fbe    00000015                   : interrupt.obj (.text:Interrupt_initVectorTable)
+                  00082fd3    00000015     board.obj (.text:SysCtl_selectCPUForPeripheralInstance)
+                  00082fe8    00000015     motor1_drive.obj (.text:initMotor1Handles)
+                  00082ffd    00000012     hal.obj (.text:HAL_enableDRV)
+                  0008300f    00000012     board.obj (.text:SysCtl_setPeripheralAccessControl)
+                  00083021    00000011     driverlib.lib : adc.obj (.text:ADC_setMode)
+                  00083032    00000011     board.obj (.text:SYNC_init)
+                  00083043    00000010     hal.obj (.text:HAL_MTR_setGateDriver)
+                  00083053    0000000e     hal.obj (.text:HAL_setParams)
+                  00083061    0000000d     angle_gen.obj (.text:ANGLE_GEN_setParams)
+                  0008306e    0000000d     rts2800_fpu64_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
+                  0008307b    0000000c     board.obj (.text:INTERRUPT_init)
+                  00083087    0000000c     driverlib.lib : interrupt.obj (.text:Interrupt_defaultHandler)
+                  00083093    0000000c     rts2800_fpu64_eabi.lib : args_main.c.obj (.text)
+                  0008309f    0000000b     board.obj (.text:ASYSCTL_init)
+                  000830aa    0000000a     dac128s085.obj (.text:DAC128S_init)
+                  000830b4    0000000a     driverlib.lib : interrupt.obj (.text:Interrupt_illegalOperationHandler)
+                  000830be    0000000a                   : interrupt.obj (.text:Interrupt_nmiHandler)
+                  000830c8    00000009     board.obj (.text:MTR1_PM_nFAULT_IN_init)
+                  000830d1    00000009     rts2800_fpu64_eabi.lib : _lock.c.obj (.text)
+                  000830da    00000008                            : copy_decompress_none.c.obj (.text:decompress:none)
+                  000830e2    00000008     f28p65x_codestartbranch.obj (.text)
+                  000830ea    00000007     hal.obj (.text:HAL_clearDataRAM)
+                  000830f1    00000006     driverlib.lib : adc.obj (.text:ADC_setOffsetTrim)
+                  000830f7    00000006     angle_gen.obj (.text:ANGLE_GEN_init)
+                  000830fd    00000006     driverlib.lib : cputimer.obj (.text:CPUTimer_setEmulationMode)
+                  00083103    00000006     encoder.obj (.text:ENC_init)
+                  00083109    00000006     speedcalc.obj (.text:SPDCALC_init)
+                  0008310f    00000004     clarke.obj (.text:CLARKE_init)
+                  00083113    00000004     ipark.obj (.text:IPARK_init)
+                  00083117    00000004     park.obj (.text:PARK_init)
+                  0008311b    00000004     pi.obj (.text:PI_init)
+                  0008311f    00000004     svgen.obj (.text:SVGEN_init)
+                  00083123    00000004     traj.obj (.text:TRAJ_init)
+                  00083127    00000002     rts2800_fpu64_eabi.lib : pre_init.c.obj (.text)
 
 .TI.ramfunc 
-*          0    00083150    000005c2     RUN ADDR = 00008000
-                  00083150    00000567     motor1_drive.obj (.TI.ramfunc:motor1CtrlISR)
-                  000836b7    00000057     driverlib.lib : flash.obj (.TI.ramfunc:Flash_initModule)
-                  0008370e    00000004                   : sysctl.obj (.TI.ramfunc)
+*          0    00083130    000005c2     RUN ADDR = 00008000
+                  00083130    00000567     motor1_drive.obj (.TI.ramfunc:motor1CtrlISR)
+                  00083697    00000057     driverlib.lib : flash.obj (.TI.ramfunc:Flash_initModule)
+                  000836ee    00000004                   : sysctl.obj (.TI.ramfunc)
 
-ramfuncs   0    00083712    00000000     UNINITIALIZEDRUN ADDR = 000085c2
+ramfuncs   0    000836f2    00000000     UNINITIALIZEDRUN ADDR = 000085c2
 
-dclfuncs   0    00083712    00000000     UNINITIALIZEDRUN ADDR = 000085c2
+dclfuncs   0    000836f2    00000000     UNINITIALIZEDRUN ADDR = 000085c2
 
 dcl32funcs 
-*          0    00083712    00000000     UNINITIALIZEDRUN ADDR = 000085c2
+*          0    000836f2    00000000     UNINITIALIZEDRUN ADDR = 000085c2
 
 .cinit     0    00090008    0000003c     
                   00090008    00000009     (.cinit..data.load) [load image, compression = lzss]
@@ -334,9 +334,9 @@ dcl32funcs
 .bss       0    00000658    000000c8     UNINITIALIZED
                   00000658    000000c8     throttle_input.obj (.bss:averagingArr)
 
-.const     0    00083718    00000047     
-                  00083718    00000044     driverlib.lib : ipc.obj (.const:IPC_Instance)
-                  0008375c    00000003     board.obj (.const)
+.const     0    000836f8    00000047     
+                  000836f8    00000044     driverlib.lib : ipc.obj (.const:IPC_Instance)
+                  0008373c    00000003     board.obj (.const)
 
 hal_data   0    00000720    0000001e     UNINITIALIZED
                   00000720    0000001e     hal.obj (hal_data)
@@ -362,9 +362,9 @@ MODULE SUMMARY
        Module                        code    ro data   rw data
        ------                        ----    -------   -------
     .\
-       sys_main.obj                  393     0         42     
+       sys_main.obj                  396     0         42     
     +--+-----------------------------+-------+---------+---------+
-       Total:                        393     0         42     
+       Total:                        396     0         42     
                                                               
     .\libraries\control\pi\
        pi.obj                        4       0         0      
@@ -434,9 +434,9 @@ MODULE SUMMARY
        Total:                        10      0         0      
                                                               
     .\src_throttleInput\
-       throttle_input.obj            149     0         206    
+       throttle_input.obj            114     0         206    
     +--+-----------------------------+-------+---------+---------+
-       Total:                        149     0         206    
+       Total:                        114     0         206    
                                                               
     .\syscfg\
        board.obj                     5354    3         0      
@@ -478,7 +478,7 @@ MODULE SUMMARY
        Stack:                        0       0         256    
        Linker Generated:             0       59        0      
     +--+-----------------------------+-------+---------+---------+
-       Grand Total:                  15559   130       1474   
+       Grand Total:                  15527   130       1474   
 
 
 LINKER GENERATED COPY TABLES
@@ -550,118 +550,118 @@ address     data page           name
 
 0003b000     ec0 (0003b000)     IPC_CPU1_To_CPU2_GetBuffer
 
-00083718    20dc (00083700)     IPC_Instance
+000836f8    20db (000836c0)     IPC_Instance
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
 
 page  address   name                             
 ----  -------   ----                             
-0     00081ac6  ADCA_CONFIG_init                 
-0     0008206a  ADCB_CONFIG_init                 
-0     00081d6d  ADCC_CONFIG_init                 
-0     000827d6  ADC_setINLTrim                   
-0     00083041  ADC_setMode                      
-0     00083111  ADC_setOffsetTrim                
-0     00082a5f  ADC_setPPBTripLimits             
-0     00082bad  ADC_setVREF                      
-0     00083117  ANGLE_GEN_init                   
-0     00083081  ANGLE_GEN_setParams              
-0     000830bf  ASYSCTL_init                     
-0     00082bda  Board_init                       
-0     00082cb7  C$$EXIT                          
-0     0008312f  CLARKE_init                      
-0     00082eaf  CMPSS_configFilterHigh           
-0     00082ecb  CMPSS_configFilterLow            
-0     00082fc9  CMPSS_configLatchOnPWMSYNC       
-0     00082d08  CMPSS_configRampHigh             
-0     00082ce0  CMPSS_configRampLow              
-0     00082817  CPUTIMER_CpuUsage_init           
-0     000829fb  CPUTIMER_TimeBase_init           
-0     0008311d  CPUTimer_setEmulationMode        
-0     000830ca  DAC128S_init                     
-0     00082a90  DAC128S_writeCommand             
-0     000825c6  DAC128S_writeData                
-0     00082669  DAC_SPI_init                     
-0     00082d2c  DAC_init                         
-0     000822f5  Device_init                      
-0     00082dd5  Device_initGPIO                  
-0     00083123  ENC_init                         
-0     00082f69  ENC_setParams                    
-0     00082c34  EPWMXBAR_init                    
+0     00081ac9  ADCA_CONFIG_init                 
+0     0008206d  ADCB_CONFIG_init                 
+0     00081d70  ADCC_CONFIG_init                 
+0     000827b6  ADC_setINLTrim                   
+0     00083021  ADC_setMode                      
+0     000830f1  ADC_setOffsetTrim                
+0     00082a3f  ADC_setPPBTripLimits             
+0     00082b8d  ADC_setVREF                      
+0     000830f7  ANGLE_GEN_init                   
+0     00083061  ANGLE_GEN_setParams              
+0     0008309f  ASYSCTL_init                     
+0     00082bba  Board_init                       
+0     00082c97  C$$EXIT                          
+0     0008310f  CLARKE_init                      
+0     00082e8f  CMPSS_configFilterHigh           
+0     00082eab  CMPSS_configFilterLow            
+0     00082fa9  CMPSS_configLatchOnPWMSYNC       
+0     00082ce8  CMPSS_configRampHigh             
+0     00082cc0  CMPSS_configRampLow              
+0     000827f7  CPUTIMER_CpuUsage_init           
+0     000829db  CPUTIMER_TimeBase_init           
+0     000830fd  CPUTimer_setEmulationMode        
+0     000830aa  DAC128S_init                     
+0     00082a70  DAC128S_writeCommand             
+0     000825a6  DAC128S_writeData                
+0     00082649  DAC_SPI_init                     
+0     00082d0c  DAC_init                         
+0     00082263  Device_init                      
+0     00082db5  Device_initGPIO                  
+0     00083103  ENC_init                         
+0     00082f49  ENC_setParams                    
+0     00082c14  EPWMXBAR_init                    
 0     0008077c  EPWM_init                        
-0     000821c6  EQEP_init                        
-0     000829c6  EQEP_setInputPolarity            
+0     000821c9  EQEP_init                        
+0     000829a6  EQEP_setInputPolarity            
 0     00008567  Flash_initModule                 
-0     00082f81  GPIO_init                        
-0     0008256c  GPIO_setAnalogMode               
-0     00082d4f  GPIO_setControllerCore           
-0     00082df5  GPIO_setDirectionMode            
-0     00082899  GPIO_setPadConfig                
-0     00082af2  GPIO_setPinConfig                
-0     00082d71  GPIO_setQualificationMode        
-0     00082b22  HAL_MTR1_init                    
-0     00083063  HAL_MTR_setGateDriver            
-0     00082955  HAL_MTR_setParams                
-0     0008310a  HAL_clearDataRAM                 
-0     0008301d  HAL_enableDRV                    
-0     00082c07  HAL_init                         
-0     00082f03  HAL_setMtrCMPSSDACValue          
-0     00083073  HAL_setParams                    
-0     00082e15  HAL_setTriggerPrams              
-0     000830e8  INPUTXBAR_init                   
-0     0008309b  INTERRUPT_init                   
-0     00083133  IPARK_init                       
+0     00082f61  GPIO_init                        
+0     0008254c  GPIO_setAnalogMode               
+0     00082d2f  GPIO_setControllerCore           
+0     00082dd5  GPIO_setDirectionMode            
+0     00082879  GPIO_setPadConfig                
+0     00082ad2  GPIO_setPinConfig                
+0     00082d51  GPIO_setQualificationMode        
+0     00082b02  HAL_MTR1_init                    
+0     00083043  HAL_MTR_setGateDriver            
+0     00082935  HAL_MTR_setParams                
+0     000830ea  HAL_clearDataRAM                 
+0     00082ffd  HAL_enableDRV                    
+0     00082be7  HAL_init                         
+0     00082ee3  HAL_setMtrCMPSSDACValue          
+0     00083053  HAL_setParams                    
+0     00082df5  HAL_setTriggerPrams              
+0     000830c8  INPUTXBAR_init                   
+0     0008307b  INTERRUPT_init                   
+0     00083113  IPARK_init                       
 0     0003b000  IPC_CPU1_To_CPU2_GetBuffer       
 0     0003a000  IPC_CPU1_To_CPU2_PutBuffer       
-0     00083718  IPC_Instance                     
-0     00082ee7  IPC_unregisterInterrupt          
-0     000830a7  Interrupt_defaultHandler         
-0     000826b4  Interrupt_disable                
-0     00082990  Interrupt_enable                 
-0     000830d4  Interrupt_illegalOperationHandler
-0     00082858  Interrupt_initModule             
-0     00082fde  Interrupt_initVectorTable        
-0     000830de  Interrupt_nmiHandler             
-0     00082f99  LAUNCHPAD_LED1_init              
-0     00081fb1  MTR1_CMPSS_U_H_init              
-0     00081ef1  MTR1_CMPSS_U_L_init              
-0     00081ca8  MTR1_CMPSS_V_init                
-0     00081e30  MTR1_CMPSS_W_init                
-0     00082d2c  MTR1_DAC_init                    
-0     00082fb1  MTR1_GATE_EN_init                
-0     00082c34  MTR1_IS_TRIP_CMPSS_init          
-0     000830e8  MTR1_PM_nFAULT_IN_init           
-0     000821c6  MTR1_QEP_init                    
-0     00083137  PARK_init                        
-0     0008313b  PI_init                          
-0     00081665  PinMux_init                      
-abs   00083712  RamfuncsLoadEnd                  
+0     000836f8  IPC_Instance                     
+0     00082ec7  IPC_unregisterInterrupt          
+0     00083087  Interrupt_defaultHandler         
+0     00082694  Interrupt_disable                
+0     00082970  Interrupt_enable                 
+0     000830b4  Interrupt_illegalOperationHandler
+0     00082838  Interrupt_initModule             
+0     00082fbe  Interrupt_initVectorTable        
+0     000830be  Interrupt_nmiHandler             
+0     00082f79  LAUNCHPAD_LED1_init              
+0     00081fb4  MTR1_CMPSS_U_H_init              
+0     00081ef4  MTR1_CMPSS_U_L_init              
+0     00081cab  MTR1_CMPSS_V_init                
+0     00081e33  MTR1_CMPSS_W_init                
+0     00082d0c  MTR1_DAC_init                    
+0     00082f91  MTR1_GATE_EN_init                
+0     00082c14  MTR1_IS_TRIP_CMPSS_init          
+0     000830c8  MTR1_PM_nFAULT_IN_init           
+0     000821c9  MTR1_QEP_init                    
+0     00083117  PARK_init                        
+0     0008311b  PI_init                          
+0     00081668  PinMux_init                      
+abs   000836f2  RamfuncsLoadEnd                  
 abs   000005c2  RamfuncsLoadSize                 
-abs   00083150  RamfuncsLoadStart                
+abs   00083130  RamfuncsLoadStart                
 abs   000085c2  RamfuncsRunEnd                   
 abs   000005c2  RamfuncsRunSize                  
 abs   00008000  RamfuncsRunStart                 
-0     00083129  SPDCALC_init                     
-0     00082a2d  SPDCALC_setParams                
-0     00082e74  SPI_clearInterruptStatus         
-0     00082669  SPI_init                         
-0     00082e55  SPI_setConfig                    
-0     0008313f  SVGEN_init                       
-0     00083052  SYNC_init                        
+0     00083109  SPDCALC_init                     
+0     00082a0d  SPDCALC_setParams                
+0     00082e54  SPI_clearInterruptStatus         
+0     00082649  SPI_init                         
+0     00082e35  SPI_setConfig                    
+0     0008311f  SVGEN_init                       
+0     00083032  SYNC_init                        
 0     00080008  SYSCTL_init                      
-0     00082d93  SysCtl_configureType             
+0     00082d73  SysCtl_configureType             
 0     000085be  SysCtl_delay                     
-0     000819c7  SysCtl_isPLLValid                
-0     00082c61  SysCtl_selectOscSource           
-0     0008261c  SysCtl_selectOscSourceAuxPLL     
-0     00082791  SysCtl_selectXTAL                
-0     00082db4  SysCtl_selectXTALSingleEnded     
-0     00081bbf  SysCtl_setAuxClock               
-0     0008178b  SysCtl_setClock                  
-0     00083143  TRAJ_init                        
-0     0008211c  USER_setMotor1Params             
-0     000828d8  XBAR_setEPWMMuxConfig            
+0     000819ca  SysCtl_isPLLValid                
+0     00082c41  SysCtl_selectOscSource           
+0     000825fc  SysCtl_selectOscSourceAuxPLL     
+0     00082771  SysCtl_selectXTAL                
+0     00082d94  SysCtl_selectXTALSingleEnded     
+0     00081bc2  SysCtl_setAuxClock               
+0     0008178e  SysCtl_setClock                  
+0     00083123  TRAJ_init                        
+0     0008211f  USER_setMotor1Params             
+0     000828b8  XBAR_setEPWMMuxConfig            
 0     0009002c  __TI_CINIT_Base                  
 0     00090044  __TI_CINIT_Limit                 
 0     00090044  __TI_CINIT_Warm                  
@@ -669,47 +669,47 @@ abs   00008000  RamfuncsRunStart
 0     00090018  __TI_Handler_Table_Limit         
 0     000002b2  __TI_STACK_END                   
 abs   00000100  __TI_STACK_SIZE                  
-0     00082c8c  __TI_auto_init_nobinit_nopinit   
+0     00082c6c  __TI_auto_init_nobinit_nopinit   
 0     000007ac  __TI_cleanup_ptr                 
-0     00082b7f  __TI_decompress_lzss             
-0     000830fa  __TI_decompress_none             
+0     00082b5f  __TI_decompress_lzss             
+0     000830da  __TI_decompress_none             
 0     000007ae  __TI_dtors_ptr                   
 0     000007aa  __TI_enable_exit_profile_output  
 abs   ffffffff  __TI_pprof_out_hndl              
 abs   ffffffff  __TI_prof_data_size              
 abs   ffffffff  __TI_prof_data_start             
-0     0008308e  __TI_zero_init_nomemset          
-0     00082382  __c28xabi_divf                   
+0     0008306e  __TI_zero_init_nomemset          
+0     000822f0  __c28xabi_divf                   
 n/a   UNDEFED   __c_args__                       
 0     000001b2  __stack                          
-0     000830b3  _args_main                       
-0     00082f37  _c_int00                         
+0     00083093  _args_main                       
+0     00082f17  _c_int00                         
 0     000007b6  _lock                            
-0     000830f9  _nop                             
-0     000830f5  _register_lock                   
-0     000830f1  _register_unlock                 
+0     000830d9  _nop                             
+0     000830d5  _register_lock                   
+0     000830d1  _register_unlock                 
 0     00080bd1  _system_post_cinit               
-0     00083147  _system_pre_init                 
+0     00083127  _system_pre_init                 
 0     000007b8  _unlock                          
-0     00082cb7  abort                            
+0     00082c97  abort                            
 0     00000418  angleGen_M1                      
 0     00000658  averagingArr                     
-0     00082b51  calcMotorOverCurrentThreshold    
-0     0008240a  calculateRMSData                 
+0     00082b31  calcMotorOverCurrentThreshold    
+0     00082378  calculateRMSData                 
 0     00000412  clarke_I_M1                      
 0     00080000  code_start                       
-0     000826fe  collectRMSData                   
+0     000826de  collectRMSData                   
 0     000007b0  currentIndex                     
 0     000007b4  currentTotal                     
 0     0000078e  dac128s                          
 0     00000780  dac128sHandle                    
 0     0000049a  enc_M1                           
-0     00082cb9  exit                             
+0     00082c99  exit                             
 0     00000722  hal                              
 0     00000720  halHandle                        
 0     00000480  halMtr_M1                        
 0     000810f6  initMotor1CtrlParameters         
-0     00083008  initMotor1Handles                
+0     00082fe8  initMotor1Handles                
 0     00000402  ipark_V_M1                       
 0     000007b2  lastReadVoltage                  
 0     00010000  loadEnd_SFRA_F32_Data            
@@ -737,7 +737,7 @@ abs   0000003a  loadSize_user_data
 0     00000780  loadStart_sys_data               
 0     00000740  loadStart_user_data              
 0     000814dc  main                             
-0     00082e92  memcpy                           
+0     00082e72  memcpy                           
 0     00008000  motor1CtrlISR                    
 0     00000400  motorHandle_M1                   
 0     000004c0  motorSetVars_M1                  
@@ -747,23 +747,23 @@ abs   0000003a  loadSize_user_data
 0     0000042a  pi_Id_M1                         
 0     00000440  pi_Iq_M1                         
 0     00000450  pi_spd_M1                        
-0     00082483  resetMotorControl                
-0     00082ac1  restartMotorControl              
+0     000823f1  resetMotorControl                
+0     00082aa1  restartMotorControl              
 0     00008000  runEnd_ctrlfuncs                 
 0     00080e9d  runMotor1Control                 
 0     00080bd2  runMotor1OffsetsCalculation      
 0     0008132d  runMotorMonitor                  
 abs   00000000  runSize_ctrlfuncs                
 0     00008000  runStart_ctrlfuncs               
-0     00082f50  setupClarke_I                    
-0     000818a9  setupControllers                 
+0     00082f30  setupClarke_I                    
+0     000818ac  setupControllers                 
 0     00000460  speedcalc_M1                     
-0     00082e35  stopMotorControl                 
+0     00082e15  stopMotorControl                 
 0     0000040e  svgen_M1                         
 0     00000782  systemVars                       
-0     00082260  throttle_get_newest_speedFreq    
+0     000824da  throttle_get_newest_speedFreq    
 0     00000420  traj_spd_M1                      
-0     00082748  updateGlobalVariables            
+0     00082728  updateGlobalVariables            
 0     00000740  userParams_M1                    
 
 
@@ -836,124 +836,124 @@ page  address   name
 0     000810f6  initMotor1CtrlParameters         
 0     0008132d  runMotorMonitor                  
 0     000814dc  main                             
-0     00081665  PinMux_init                      
-0     0008178b  SysCtl_setClock                  
-0     000818a9  setupControllers                 
-0     000819c7  SysCtl_isPLLValid                
-0     00081ac6  ADCA_CONFIG_init                 
-0     00081bbf  SysCtl_setAuxClock               
-0     00081ca8  MTR1_CMPSS_V_init                
-0     00081d6d  ADCC_CONFIG_init                 
-0     00081e30  MTR1_CMPSS_W_init                
-0     00081ef1  MTR1_CMPSS_U_L_init              
-0     00081fb1  MTR1_CMPSS_U_H_init              
-0     0008206a  ADCB_CONFIG_init                 
-0     0008211c  USER_setMotor1Params             
-0     000821c6  EQEP_init                        
-0     000821c6  MTR1_QEP_init                    
-0     00082260  throttle_get_newest_speedFreq    
-0     000822f5  Device_init                      
-0     00082382  __c28xabi_divf                   
-0     0008240a  calculateRMSData                 
-0     00082483  resetMotorControl                
-0     0008256c  GPIO_setAnalogMode               
-0     000825c6  DAC128S_writeData                
-0     0008261c  SysCtl_selectOscSourceAuxPLL     
-0     00082669  DAC_SPI_init                     
-0     00082669  SPI_init                         
-0     000826b4  Interrupt_disable                
-0     000826fe  collectRMSData                   
-0     00082748  updateGlobalVariables            
-0     00082791  SysCtl_selectXTAL                
-0     000827d6  ADC_setINLTrim                   
-0     00082817  CPUTIMER_CpuUsage_init           
-0     00082858  Interrupt_initModule             
-0     00082899  GPIO_setPadConfig                
-0     000828d8  XBAR_setEPWMMuxConfig            
-0     00082955  HAL_MTR_setParams                
-0     00082990  Interrupt_enable                 
-0     000829c6  EQEP_setInputPolarity            
-0     000829fb  CPUTIMER_TimeBase_init           
-0     00082a2d  SPDCALC_setParams                
-0     00082a5f  ADC_setPPBTripLimits             
-0     00082a90  DAC128S_writeCommand             
-0     00082ac1  restartMotorControl              
-0     00082af2  GPIO_setPinConfig                
-0     00082b22  HAL_MTR1_init                    
-0     00082b51  calcMotorOverCurrentThreshold    
-0     00082b7f  __TI_decompress_lzss             
-0     00082bad  ADC_setVREF                      
-0     00082bda  Board_init                       
-0     00082c07  HAL_init                         
-0     00082c34  EPWMXBAR_init                    
-0     00082c34  MTR1_IS_TRIP_CMPSS_init          
-0     00082c61  SysCtl_selectOscSource           
-0     00082c8c  __TI_auto_init_nobinit_nopinit   
-0     00082cb7  C$$EXIT                          
-0     00082cb7  abort                            
-0     00082cb9  exit                             
-0     00082ce0  CMPSS_configRampLow              
-0     00082d08  CMPSS_configRampHigh             
-0     00082d2c  DAC_init                         
-0     00082d2c  MTR1_DAC_init                    
-0     00082d4f  GPIO_setControllerCore           
-0     00082d71  GPIO_setQualificationMode        
-0     00082d93  SysCtl_configureType             
-0     00082db4  SysCtl_selectXTALSingleEnded     
-0     00082dd5  Device_initGPIO                  
-0     00082df5  GPIO_setDirectionMode            
-0     00082e15  HAL_setTriggerPrams              
-0     00082e35  stopMotorControl                 
-0     00082e55  SPI_setConfig                    
-0     00082e74  SPI_clearInterruptStatus         
-0     00082e92  memcpy                           
-0     00082eaf  CMPSS_configFilterHigh           
-0     00082ecb  CMPSS_configFilterLow            
-0     00082ee7  IPC_unregisterInterrupt          
-0     00082f03  HAL_setMtrCMPSSDACValue          
-0     00082f37  _c_int00                         
-0     00082f50  setupClarke_I                    
-0     00082f69  ENC_setParams                    
-0     00082f81  GPIO_init                        
-0     00082f99  LAUNCHPAD_LED1_init              
-0     00082fb1  MTR1_GATE_EN_init                
-0     00082fc9  CMPSS_configLatchOnPWMSYNC       
-0     00082fde  Interrupt_initVectorTable        
-0     00083008  initMotor1Handles                
-0     0008301d  HAL_enableDRV                    
-0     00083041  ADC_setMode                      
-0     00083052  SYNC_init                        
-0     00083063  HAL_MTR_setGateDriver            
-0     00083073  HAL_setParams                    
-0     00083081  ANGLE_GEN_setParams              
-0     0008308e  __TI_zero_init_nomemset          
-0     0008309b  INTERRUPT_init                   
-0     000830a7  Interrupt_defaultHandler         
-0     000830b3  _args_main                       
-0     000830bf  ASYSCTL_init                     
-0     000830ca  DAC128S_init                     
-0     000830d4  Interrupt_illegalOperationHandler
-0     000830de  Interrupt_nmiHandler             
-0     000830e8  INPUTXBAR_init                   
-0     000830e8  MTR1_PM_nFAULT_IN_init           
-0     000830f1  _register_unlock                 
-0     000830f5  _register_lock                   
-0     000830f9  _nop                             
-0     000830fa  __TI_decompress_none             
-0     0008310a  HAL_clearDataRAM                 
-0     00083111  ADC_setOffsetTrim                
-0     00083117  ANGLE_GEN_init                   
-0     0008311d  CPUTimer_setEmulationMode        
-0     00083123  ENC_init                         
-0     00083129  SPDCALC_init                     
-0     0008312f  CLARKE_init                      
-0     00083133  IPARK_init                       
-0     00083137  PARK_init                        
-0     0008313b  PI_init                          
-0     0008313f  SVGEN_init                       
-0     00083143  TRAJ_init                        
-0     00083147  _system_pre_init                 
-0     00083718  IPC_Instance                     
+0     00081668  PinMux_init                      
+0     0008178e  SysCtl_setClock                  
+0     000818ac  setupControllers                 
+0     000819ca  SysCtl_isPLLValid                
+0     00081ac9  ADCA_CONFIG_init                 
+0     00081bc2  SysCtl_setAuxClock               
+0     00081cab  MTR1_CMPSS_V_init                
+0     00081d70  ADCC_CONFIG_init                 
+0     00081e33  MTR1_CMPSS_W_init                
+0     00081ef4  MTR1_CMPSS_U_L_init              
+0     00081fb4  MTR1_CMPSS_U_H_init              
+0     0008206d  ADCB_CONFIG_init                 
+0     0008211f  USER_setMotor1Params             
+0     000821c9  EQEP_init                        
+0     000821c9  MTR1_QEP_init                    
+0     00082263  Device_init                      
+0     000822f0  __c28xabi_divf                   
+0     00082378  calculateRMSData                 
+0     000823f1  resetMotorControl                
+0     000824da  throttle_get_newest_speedFreq    
+0     0008254c  GPIO_setAnalogMode               
+0     000825a6  DAC128S_writeData                
+0     000825fc  SysCtl_selectOscSourceAuxPLL     
+0     00082649  DAC_SPI_init                     
+0     00082649  SPI_init                         
+0     00082694  Interrupt_disable                
+0     000826de  collectRMSData                   
+0     00082728  updateGlobalVariables            
+0     00082771  SysCtl_selectXTAL                
+0     000827b6  ADC_setINLTrim                   
+0     000827f7  CPUTIMER_CpuUsage_init           
+0     00082838  Interrupt_initModule             
+0     00082879  GPIO_setPadConfig                
+0     000828b8  XBAR_setEPWMMuxConfig            
+0     00082935  HAL_MTR_setParams                
+0     00082970  Interrupt_enable                 
+0     000829a6  EQEP_setInputPolarity            
+0     000829db  CPUTIMER_TimeBase_init           
+0     00082a0d  SPDCALC_setParams                
+0     00082a3f  ADC_setPPBTripLimits             
+0     00082a70  DAC128S_writeCommand             
+0     00082aa1  restartMotorControl              
+0     00082ad2  GPIO_setPinConfig                
+0     00082b02  HAL_MTR1_init                    
+0     00082b31  calcMotorOverCurrentThreshold    
+0     00082b5f  __TI_decompress_lzss             
+0     00082b8d  ADC_setVREF                      
+0     00082bba  Board_init                       
+0     00082be7  HAL_init                         
+0     00082c14  EPWMXBAR_init                    
+0     00082c14  MTR1_IS_TRIP_CMPSS_init          
+0     00082c41  SysCtl_selectOscSource           
+0     00082c6c  __TI_auto_init_nobinit_nopinit   
+0     00082c97  C$$EXIT                          
+0     00082c97  abort                            
+0     00082c99  exit                             
+0     00082cc0  CMPSS_configRampLow              
+0     00082ce8  CMPSS_configRampHigh             
+0     00082d0c  DAC_init                         
+0     00082d0c  MTR1_DAC_init                    
+0     00082d2f  GPIO_setControllerCore           
+0     00082d51  GPIO_setQualificationMode        
+0     00082d73  SysCtl_configureType             
+0     00082d94  SysCtl_selectXTALSingleEnded     
+0     00082db5  Device_initGPIO                  
+0     00082dd5  GPIO_setDirectionMode            
+0     00082df5  HAL_setTriggerPrams              
+0     00082e15  stopMotorControl                 
+0     00082e35  SPI_setConfig                    
+0     00082e54  SPI_clearInterruptStatus         
+0     00082e72  memcpy                           
+0     00082e8f  CMPSS_configFilterHigh           
+0     00082eab  CMPSS_configFilterLow            
+0     00082ec7  IPC_unregisterInterrupt          
+0     00082ee3  HAL_setMtrCMPSSDACValue          
+0     00082f17  _c_int00                         
+0     00082f30  setupClarke_I                    
+0     00082f49  ENC_setParams                    
+0     00082f61  GPIO_init                        
+0     00082f79  LAUNCHPAD_LED1_init              
+0     00082f91  MTR1_GATE_EN_init                
+0     00082fa9  CMPSS_configLatchOnPWMSYNC       
+0     00082fbe  Interrupt_initVectorTable        
+0     00082fe8  initMotor1Handles                
+0     00082ffd  HAL_enableDRV                    
+0     00083021  ADC_setMode                      
+0     00083032  SYNC_init                        
+0     00083043  HAL_MTR_setGateDriver            
+0     00083053  HAL_setParams                    
+0     00083061  ANGLE_GEN_setParams              
+0     0008306e  __TI_zero_init_nomemset          
+0     0008307b  INTERRUPT_init                   
+0     00083087  Interrupt_defaultHandler         
+0     00083093  _args_main                       
+0     0008309f  ASYSCTL_init                     
+0     000830aa  DAC128S_init                     
+0     000830b4  Interrupt_illegalOperationHandler
+0     000830be  Interrupt_nmiHandler             
+0     000830c8  INPUTXBAR_init                   
+0     000830c8  MTR1_PM_nFAULT_IN_init           
+0     000830d1  _register_unlock                 
+0     000830d5  _register_lock                   
+0     000830d9  _nop                             
+0     000830da  __TI_decompress_none             
+0     000830ea  HAL_clearDataRAM                 
+0     000830f1  ADC_setOffsetTrim                
+0     000830f7  ANGLE_GEN_init                   
+0     000830fd  CPUTimer_setEmulationMode        
+0     00083103  ENC_init                         
+0     00083109  SPDCALC_init                     
+0     0008310f  CLARKE_init                      
+0     00083113  IPARK_init                       
+0     00083117  PARK_init                        
+0     0008311b  PI_init                          
+0     0008311f  SVGEN_init                       
+0     00083123  TRAJ_init                        
+0     00083127  _system_pre_init                 
+0     000836f8  IPC_Instance                     
 0     00090012  __TI_Handler_Table_Base          
 0     00090018  __TI_Handler_Table_Limit         
 0     0009002c  __TI_CINIT_Base                  
@@ -973,8 +973,8 @@ abs   000005c2  RamfuncsLoadSize
 abs   000005c2  RamfuncsRunSize                  
 abs   00008000  RamfuncsRunStart                 
 abs   000085c2  RamfuncsRunEnd                   
-abs   00083150  RamfuncsLoadStart                
-abs   00083712  RamfuncsLoadEnd                  
+abs   00083130  RamfuncsLoadStart                
+abs   000836f2  RamfuncsLoadEnd                  
 abs   ffffffff  __TI_pprof_out_hndl              
 abs   ffffffff  __TI_prof_data_size              
 abs   ffffffff  __TI_prof_data_start             

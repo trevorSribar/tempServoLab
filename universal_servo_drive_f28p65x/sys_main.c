@@ -279,6 +279,7 @@ void main(void)
     }
 
     motorVars_M1.flagInitializeDone = true;
+    motorVars_M1.flagEnableRunAndIdentify = true;
 
     while(systemVars.flagEnableSystem == true)
     {

@@ -12,29 +12,29 @@ src_board/%.obj: ../src_board/%.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
 	@echo 'Finished building: "$<"'
 	@echo ' '
 
-build-1937159601: ../src_board/servo_drive_BXL_3PHGANINV.syscfg
+build-684233893: ../src_board/servo_drive_BXL_3PHGANINV.syscfg
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: SysConfig'
-	"C:/ti/ccs2030/ccs/utils/sysconfig_1.25.0/sysconfig_cli.bat" --script "C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_board/servo_drive_BXL_3PHGANINV.syscfg" -o "syscfg" -s "C:/ti/c2000/C2000Ware_MotorControl_SDK_5_04_00_00/c2000ware/.metadata/sdk.json" -d "F28P65x" -p "169NMR" -r "F28P65x_169NMR" --compiler ccs
+	"C:/ti/ccs2030/ccs/utils/sysconfig_1.25.0/sysconfig_cli.bat" -s "C:/ti/c2000/C2000Ware_MotorControl_SDK_5_04_00_00/c2000ware/.metadata/sdk.json" -d "F28P65x" -p "169NMR" -r "F28P65x_169NMR" --script "C:/ti/W2-universalServo2/universal_servo_drive_f28p65x/src_board/servo_drive_BXL_3PHGANINV.syscfg" -o "syscfg" --compiler ccs
 	@echo 'Finished building: "$<"'
 	@echo ' '
 
-syscfg/board.c: build-1937159601 ../src_board/servo_drive_BXL_3PHGANINV.syscfg
-syscfg/board.h: build-1937159601
-syscfg/board.cmd.genlibs: build-1937159601
-syscfg/board.opt: build-1937159601
-syscfg/board.json: build-1937159601
-syscfg/pinmux.csv: build-1937159601
-syscfg/epwm.dot: build-1937159601
-syscfg/device.c: build-1937159601
-syscfg/device.h: build-1937159601
-syscfg/adc.dot: build-1937159601
-syscfg/c2000ware_libraries.cmd.genlibs: build-1937159601
-syscfg/c2000ware_libraries.opt: build-1937159601
-syscfg/c2000ware_libraries.c: build-1937159601
-syscfg/c2000ware_libraries.h: build-1937159601
-syscfg/clocktree.h: build-1937159601
-syscfg: build-1937159601
+syscfg/board.c: build-684233893 ../src_board/servo_drive_BXL_3PHGANINV.syscfg
+syscfg/board.h: build-684233893
+syscfg/board.cmd.genlibs: build-684233893
+syscfg/board.opt: build-684233893
+syscfg/board.json: build-684233893
+syscfg/pinmux.csv: build-684233893
+syscfg/epwm.dot: build-684233893
+syscfg/device.c: build-684233893
+syscfg/device.h: build-684233893
+syscfg/adc.dot: build-684233893
+syscfg/c2000ware_libraries.cmd.genlibs: build-684233893
+syscfg/c2000ware_libraries.opt: build-684233893
+syscfg/c2000ware_libraries.c: build-684233893
+syscfg/c2000ware_libraries.h: build-684233893
+syscfg/clocktree.h: build-684233893
+syscfg: build-684233893
 
 syscfg/%.obj: ./syscfg/%.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
 	@echo 'Building file: "$<"'
