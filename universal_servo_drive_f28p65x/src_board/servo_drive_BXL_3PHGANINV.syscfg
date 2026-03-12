@@ -40,6 +40,8 @@ const gpio2            = gpio.addInstance();
 const gpio3            = gpio.addInstance();
 const inputxbar_input  = scripting.addModule("/driverlib/inputxbar_input.js", {}, false);
 const inputxbar_input1 = inputxbar_input.addInstance();
+const sci              = scripting.addModule("/driverlib/sci.js", {}, false);
+const sci1             = sci.addInstance();
 const spi              = scripting.addModule("/driverlib/spi.js", {}, false);
 const spi1             = spi.addInstance();
 const sync             = scripting.addModule("/driverlib/sync.js");
@@ -470,6 +472,10 @@ inputxbar_input1.$name         = "MTR1_PM_nFAULT_IN";
 inputxbar_input1.inputxbarGpio = "GPIO14";
 inputxbar_input1.inputxbarLock = true;
 
+sci1.$name        = "mySCI";
+sci1.rxQual.$name = "myGPIOQUAL3";
+sci1.txQual.$name = "myGPIOQUAL4";
+
 spi1.mode                    = "SPI_MODE_CONTROLLER";
 spi1.bitRate                 = 4000000;
 spi1.txFifo                  = "SPI_FIFO_TX4";
@@ -503,4 +509,7 @@ analog1.analog["b7, gpio208Pin"].$suggestSolution  = "B7, GPIO208";
 analog1.analog["c4, gpio205Pin"].$suggestSolution  = "C4, GPIO205";
 analog1.analog["c5, gpio204Pin"].$suggestSolution  = "C5, GPIO204";
 analog1.analog["c7, gpio198Pin"].$suggestSolution  = "C7, GPIO198";
+sci1.sci.$suggestSolution                          = "SCIA";
+sci1.sci.sci_rxPin.$suggestSolution                = "B6, GPIO207";
+sci1.sci.sci_txPin.$suggestSolution                = "B5, GPIO216";
 spi1.spi.$suggestSolution                          = "SPID";

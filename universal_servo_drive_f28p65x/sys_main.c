@@ -46,6 +46,7 @@
 #include "board.h" // syscfg
 
 volatile SYSTEM_Vars_t systemVars;
+TelemetryUart_t UARTcomms;
 #pragma DATA_SECTION(systemVars,"sys_data");
 
 #if defined(DAC128S_ENABLE)
@@ -79,6 +80,8 @@ bool        sfraCollectStart;
 // the functions
 // !!! Please make sure that you had gone through the user guide, and follow the
 // !!! guide to set up the kit and load the right code
+__interrupt void INT_myCPUTIMER0_ISR(void);
+
 void main(void)
 {
     // Clear memory for system and controller
@@ -255,6 +258,13 @@ void main(void)
 
     // enable debug events
     ERTM;
+    EINT;
+
+    // initialize UART comms
+    TelemetryUart_init(&UARTcomms);
+    // Register a float variable pointer to be streamed
+    TelemetryUart_addChannel(&UARTcomms, &motorVars_M1.speed_Hz);
+    TelemetryUart_addChannel(&UARTcomms, &motorVars_M1.speedRef_Hz);
 
     systemVars.powerRelayWaitTime_ms = POWER_RELAY_WAIT_TIME_ms;
 
@@ -350,6 +360,8 @@ void main(void)
 #if throttle_input_enable
 
     motorVars_M1.speedRef_Hz = throttle_get_newest_speedFreq();
+    SCI_writeCharBlockingNonFIFO(mySCI_BASE, '\t');
+    SCI_writeCharBlockingNonFIFO(mySCI_BASE, '1'); 
 
 #endif
 

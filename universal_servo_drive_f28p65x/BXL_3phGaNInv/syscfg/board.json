@@ -1,8 +1,0 @@
-{
-    "interruptInfo" : [
-        {
-            "interruptName": "INT_ADCA_CONFIG_1",
-            "interruptHandler": "motor1CtrlISR"
-        }
-    ]
-}
