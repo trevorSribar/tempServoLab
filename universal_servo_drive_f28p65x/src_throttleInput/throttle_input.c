@@ -34,7 +34,7 @@ float32_t throttle_get_newest_speedFreq(){
         return 0;
     }
     // https://www.desmos.com/calculator/ynxfuuraxl 
-    else if(currentThrottleVal > throttle_thresh_low){
+    else if(currentThrottleVal < throttle_thresh_low){
         return (-1*throttle_speed_max+(throttle_speed_max/throttle_thresh_low * currentThrottleVal)); //-max+ max/deadLow * input
     }
     else{

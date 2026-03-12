@@ -20,7 +20,7 @@
 #define throttle_thresh_low  (float32_t)1.8
 #define throttle_thresh_high (float32_t)1.5
 
-#define throttle_speed_max   (float32_t)30
+#define throttle_speed_max   (float32_t)60
 
 float32_t throttle_get_ADC_Val();
 

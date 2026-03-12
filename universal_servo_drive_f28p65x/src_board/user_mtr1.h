@@ -88,7 +88,7 @@ extern "C"
 #define USER_M1_VOLTAGE_FILTER_POLE_Hz      (1103.026917f)      // 9.76k/47nF
 
 //! \brief Defines the maximum current at the AD converter
-#define USER_M1_FULL_SCALE_CURRENT_A         (60.0f)     // gain=20 
+#define USER_M1_FULL_SCALE_CURRENT_A         (30.0f)     // gain=20
 
 //! \brief ADC current offsets for A, B, and C phases
 #define USER_M1_IA_OFFSET_AD    (2246.0f)
@@ -145,7 +145,7 @@ extern "C"
 #define USER_M1_UNDER_VOLTAGE_NORM_V        (12.0f)
 
 //! \brief motor lost phase current threshold
-#define USER_M1_LOST_PHASE_CURRENT_A        (2.0f) //0.2f
+#define USER_M1_LOST_PHASE_CURRENT_A        (0.2f)
 
 //! \brief motor unbalance ratio percent threshold
 #define USER_M1_UNBALANCE_RATIO             (0.2f)
@@ -154,10 +154,10 @@ extern "C"
 #define USER_M1_OVER_LOAD_POWER_W           (50.0f)
 
 //! \brief motor stall current threshold
-#define USER_M1_STALL_CURRENT_A             (20.0f) //was 10.0f
+#define USER_M1_STALL_CURRENT_A             (10.0f)
 
 //! \brief motor fault check current threshold
-#define USER_M1_FAULT_CHECK_CURRENT_A       (2.0f) //changed frm 0.2 A
+#define USER_M1_FAULT_CHECK_CURRENT_A       (0.2f)
 
 //! \brief motor failed maximum speed threshold
 #define USER_M1_FAIL_SPEED_MAX_HZ           (500.0f)
@@ -743,7 +743,7 @@ extern "C"
 
 //! brief Define the maximum current vector angle for Field Weakening Control
 #define USER_M1_FWC_MAX_ANGLE          -15.0f                        // degree
-#define USER_M1_FWC_MAX_ANGLE_RAD      USER_M1_FWC_MAX_ANGLE /120.0f * MATH_PI  // rad //was 180.0f
+#define USER_M1_FWC_MAX_ANGLE_RAD      USER_M1_FWC_MAX_ANGLE /180.0f * MATH_PI  // rad
 
 //! brief Define the minimum current vector angle for Field Weakening Control
 #define USER_M1_FWC_MIN_ANGLE          0.0f                          // degree
@@ -838,13 +838,13 @@ extern "C"
 #define USER_MOTOR1_Rr_Ohm                 (NULL)
 
 // the stator resistance value of the motor, in Ohm
-#define USER_MOTOR1_Rs_Ohm                 (0.44f) //was 0.393955578f
+#define USER_MOTOR1_Rs_Ohm                 (0.393955578f)
 
 // the stator inductance value of the motor in the direct direction, in H
-#define USER_MOTOR1_Ls_d_H                 (0.00054f) //was 0.000190442806f
+#define USER_MOTOR1_Ls_d_H                 (0.000190442806f)
 
 // the stator inductance value of the motor in the quadrature direction, in H
-#define USER_MOTOR1_Ls_q_H                 (0.00054f) //was same as above
+#define USER_MOTOR1_Ls_q_H                 (0.000190442806f)
 
 // the rated flux value of the motor, in V/Hz
 #define USER_MOTOR1_RATED_FLUX_VpHz        (0.0399353318f)
@@ -859,7 +859,7 @@ extern "C"
 #define USER_MOTOR1_IND_EST_CURRENT_A      (-1.0f)
 
 // the maximum current value of the motor, in A
-#define USER_MOTOR1_MAX_CURRENT_A          (4.5f) //was 6.6f
+#define USER_MOTOR1_MAX_CURRENT_A          (6.6f)
 
 // the R/L excitation frequency for motor parameters identification, in Hz
 #define USER_MOTOR1_FLUX_EXC_FREQ_Hz       (60.0f)
@@ -903,7 +903,7 @@ extern "C"
 #define USER_MOTOR1_FLUX_CURRENT_A         (0.5f)           // A
 
 // the current for motor rotor alignment, in A
-#define USER_MOTOR1_ALIGN_CURRENT_A        (0.3f)           // A //was 1.0f
+#define USER_MOTOR1_ALIGN_CURRENT_A        (1.0f)           // A
 
 // the current for start to run motor with closed-loop when the speed is
 //  lower than the startup setting speed, in A
@@ -914,7 +914,7 @@ extern "C"
 
 // the over-current threshold for the motor, in A.
 // The value can be set to 50%~300% of the rated current of the motor
-#define USER_MOTOR1_OVER_CURRENT_A         (20.0f)           // A 7.5f
+#define USER_MOTOR1_OVER_CURRENT_A         (7.5f)           // A
 
 // the speed threshold for start the motor, in Hz
 #define USER_MOTOR1_SPEED_START_Hz         (35.0f)          // Hz
