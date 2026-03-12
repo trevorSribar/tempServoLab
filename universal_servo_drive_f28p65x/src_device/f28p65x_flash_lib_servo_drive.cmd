@@ -102,30 +102,30 @@ SECTIONS
     .stack                : >  RAMM0
     .init_array           : >  FLASH_BANK0_CODE,
                               ALIGN(8)
-    .bss                  : >  RAMM1
+    .bss                  : >  RAMD0
     .const                : >  FLASH_BANK0_CODE,
                               ALIGN(8)
-    .data                 : >  RAMM1
+    .data                 : >  RAMD0
     .switch               : >  FLASH_BANK0_CODE,
                               ALIGN(8)
-    .sysmem               : >  RAMM1
+    .sysmem               : >  RAMD1
 
-    hal_data             : >  RAMM1,
+    hal_data             : >  RAMD0,
                               LOAD_START(loadStart_hal_data),
                               LOAD_END(loadEnd_hal_data),
                               LOAD_SIZE(loadSize_hal_data)
 
-    user_data            : >  RAMM1,
+    user_data            : >  RAMD1,
                               LOAD_START(loadStart_user_data),
                               LOAD_END(loadEnd_user_data),
                               LOAD_SIZE(loadSize_user_data)
 
-    foc_data             : >  RAMM1,
+    foc_data             : >  RAMD0,
                               LOAD_START(loadStart_foc_data),
                               LOAD_END(loadEnd_foc_data),
                               LOAD_SIZE(loadSize_foc_data)
 
-    sys_data             : >  RAMM1,
+    sys_data             : >  RAMD1,
                               LOAD_START(loadStart_sys_data),
                               LOAD_END(loadEnd_sys_data),
                               LOAD_SIZE(loadSize_sys_data)

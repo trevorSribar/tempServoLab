@@ -46,7 +46,7 @@
 #include "board.h" // syscfg
 
 volatile SYSTEM_Vars_t systemVars;
-//TelemetryUart_t UARTcomms;
+TelemetryUart_t UARTcomms;
 #pragma DATA_SECTION(systemVars,"sys_data");
 
 #if defined(DAC128S_ENABLE)
@@ -261,10 +261,14 @@ void main(void)
     EINT;
 
     // initialize UART comms
-    // TelemetryUart_init(&UARTcomms);
-    // // Register a float variable pointer to be streamed
-    // TelemetryUart_addChannel(&UARTcomms, &motorVars_M1.speed_Hz);
-    // TelemetryUart_addChannel(&UARTcomms, &motorVars_M1.speedRef_Hz);
+    TelemetryUart_init(&UARTcomms);
+    // Register a float variable pointer to be streamed
+    char newLine = '\n';
+    float newLinetoSend = (float)newLine;
+    TelemetryUart_addChannel(&UARTcomms, &newLinetoSend);
+    TelemetryUart_addChannel(&UARTcomms, &motorVars_M1.speed_Hz);
+    TelemetryUart_addChannel(&UARTcomms, &newLinetoSend);
+    TelemetryUart_addChannel(&UARTcomms, &motorVars_M1.speedRef_Hz);
 
     systemVars.powerRelayWaitTime_ms = POWER_RELAY_WAIT_TIME_ms;
 
@@ -360,8 +364,7 @@ void main(void)
 #if throttle_input_enable
 
     motorVars_M1.speedRef_Hz = throttle_get_newest_speedFreq();
-    SCI_writeCharBlockingNonFIFO(mySCI_BASE, '\t');
-    SCI_writeCharBlockingNonFIFO(mySCI_BASE, '1'); 
+    TelemetryUart_service(&UARTcomms);
 
 #endif
 

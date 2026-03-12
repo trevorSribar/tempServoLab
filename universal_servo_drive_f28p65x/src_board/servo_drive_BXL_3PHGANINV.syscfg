@@ -40,6 +40,7 @@ const gpio2            = gpio.addInstance();
 const gpio3            = gpio.addInstance();
 const inputxbar_input  = scripting.addModule("/driverlib/inputxbar_input.js", {}, false);
 const inputxbar_input1 = inputxbar_input.addInstance();
+const memcfg           = scripting.addModule("/driverlib/memcfg.js");
 const sci              = scripting.addModule("/driverlib/sci.js", {}, false);
 const sci1             = sci.addInstance();
 const spi              = scripting.addModule("/driverlib/spi.js", {}, false);
